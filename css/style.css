@@ -13,7 +13,331 @@
 /* there we should sail #3B8686 */
 /* adrift in dreams 0B486B */
 
+/* GENEREAL */
+* {
+	font-family: 'Ubuntu Mono', sans-serif;
+}
 
-.span4{
-	background-color: #79BD9A;
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: none;	
+}
+
+a:visited {
+	text-decoration: none;
+}
+
+body {
+	/*background-color: #79BD9A;*/
+	min-width: 320px;
+	min-height: 320px;
+	height: 100%;
+	width: 100%;
+	padding-top: 60px;
+	padding-bottom: 60px;
+}
+
+/*#award {
+	transition: 1s;
+}*/
+
+/* CLASS */
+.button {
+	width: 40px;
+	height: 40px;
+	margin-left: 10px;
+	margin-right: 10px;
+	float: right;
+	line-height: 40px;
+	font-size: 30px;
+	color: #2ec5ee;
+}
+
+.button > a:hover {
+	color: #2ec5ee;
+}
+
+.button > a:visited {
+	color: #2ec5ee;
+}
+
+.opCanvas{
+	background-color: #f6efe7;
+	border-radius: 20px;
+	position: relative;
+	margin: 20px auto;
+	display: block;
+	transition: 1s;
+}
+
+/* HEADER */
+header {
+	background-color: #1a1a1a;
+	height:40px;
+	width:100%;
+	position:fixed;
+	top:0;
+}
+
+.header-container {
+	max-width: 1024px;
+	margin: 0 auto;
+}
+
+.name {
+	color: #CCCCCC;
+	width: 50%;
+	text-align:left;
+	line-height: 40px;
+	font-size: 16px;
+	margin-left:10px;
+	max-width: 100px;
+	float:left;
+}
+
+.name > a:hover {
+	color: #CCCCCC;
+	text-decoration: none;
+}
+
+.name > a:visited {
+	color: #CCCCCC;
+	text-decoration: none;
+}
+
+/* FOOTER */
+footer {
+	background-color: #1a1a1a;
+	height:40px;
+	width:100%;
+	position:fixed;
+	bottom:0;
+}
+
+.footer-container {
+	max-width: 1024px;
+	margin: 0 auto;
+}
+
+.contact {
+	color: #CCCCCC;
+	width: 50%;
+	text-align:left;
+	line-height: 40px;
+	font-size: 16px;
+	margin-left:10px;
+	float:left;
+}
+
+.contact > a:hover {
+	color: #CCCCCC;
+	text-decoration: none;
+}
+
+.contact > a:visited {
+	color: #CCCCCC;
+	text-decoration: none;
+}
+
+
+
+
+/* Responsive shit */
+.hero-unit {
+	max-width: 960px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/* IDs */
+#about {
+	min-height: 400px;
+	transition: 1s;
+}
+	.about-description {
+		margin: auto;
+		max-width: 400px;
+		text-align: left;
+	}
+	.about-resume {
+		margin: auto;
+		text-align: center;
+		background-color: #cecece;
+		border-radius: 5px;
+		width: 120px;
+		height: 30px;
+	}
+
+#education {
+	transition: 1s;
+}
+	.uoft-container {
+		border-radius: 10px;
+		text-align: left;
+	}
+
+	.uoft-image {
+		max-width: 150px;
+		border-radius: 10px;
+		margin-left: 10px;
+	}
+
+	.uoft-description {
+		height: 150px;
+		text-align: right;
+	}
+
+	.uoft-text{
+		margin-right: 10px;
+		list-style: none;
+		display: block;
+	}
+
+	.uoft-text-mobile {
+		margin-right: 10px;
+		list-style: none;	
+		display: none;
+	}
+
+#resume {
+	transition: 1s;
+}
+
+#projects {
+	transition: 1s;	
+}
+
+#hobby {
+	transition: 1s;
+}
+
+/* Tablet mode */
+@media (max-width: 768px) {
+	
+	.navbar-text.pull-right {
+		float: none;
+		padding-left: 5px;
+		padding-right: 5px;
+	}
+
+	.nav-collapse li {
+		height:40px;
+		width:70px;
+		transition: 1s;
+	}
+
+	.hero-unit {
+		padding: 40px 40px 40px 40px;
+	}
+
+	/* IDs */
+	#about {
+		min-height: 400px;
+		transition: 1s;
+	}
+
+	#education {
+		transition: 1s;
+	}
+		.uoft-text{
+			margin-right: 10px;
+			list-style: none;
+			display: none;
+		}
+
+		.uoft-text-mobile {
+			margin-right: 20px;
+			list-style: none;
+			display: block;
+		}
+
+	#resume {
+		transition: 1s;
+	}
+
+	#projects {
+		transition: 1s;	
+	}
+
+	#hobby {
+		transition: 1s;
+	}
+}
+
+/* Mobile mode */
+@media (max-width: 480px) {
+	body {
+		/*background-color: #79BD9A;*/
+		min-width: 320px;
+		min-height: 320px;
+		margin:0 0 0 0;
+		padding-top: 40px;
+		padding-bottom: 40px;
+		background-color: #1a1a1a;
+	}
+
+	.button {
+		width: 40px;
+		height: 40px;
+		margin: 0 2px;
+		float: right;
+		line-height: 40px;
+		font-size: 30px;
+		color: #2ec5ee;
+	}
+
+	.non-mobile {
+		display: none;
+	}
+
+	.container-fluid {
+		padding: 0px;
+	}
+
+	.nav-collapse li {
+		height:20px;
+		width:40px;
+		transition: 1s;
+	}
+
+	.hero-unit {
+		margin: 10px 0 0 0;
+		padding: 20px 20px 20px 20px;
+	}
+
+	/* IDs */
+	#about {
+		min-height: 400px;
+		transition: 1s;
+	}
+
+	#education {
+		transition: 1s;
+	}
+		.uoft-text{
+			margin-right: 10px;
+			list-style: none;
+			display: none;
+		}
+
+		.uoft-text-mobile {
+			margin-right: 20px;
+			list-style: none;
+			display: block;
+		}
+
+	#resume {
+		transition: 1s;
+	}
+
+	#projects {
+		transition: 1s;	
+	}
+	
+	#hobby {
+		transition: 1s;
+	}
 }

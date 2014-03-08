@@ -1,35 +1,281 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Bootstrap 101 Template</title>
+		<link rel="icon"  type="image/png" href="img/favicon.png">
+		<title>David's Online Portfolio</title>
+
+		<!-- Meta tags -->
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<!-- Bootstrap -->
+		<meta charset="utf-8">
+		<meta name="description" content="About David Zhang">
+		<meta name="author" content="David Zhang">
+
+		<!-- CSS -->
+		<link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+		<link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono' rel='stylesheet' type='text/css'>
 		<link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
 		<link href="css/style.css" rel="stylesheet" media="screen">
-	</head>
-	<body>
-		<h1>Hello, world!</h1>
-		<!-- Need jQuery since bootstrap uses a bunch of jquery stuff -->
-		<script src="http://code.jquery.com/jquery.js"></script>
+
+		<!-- Javascripts -->
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 		<script src="js/bootstrap.min.js"></script>
+		<script src="js/slidebars.min.js"></script>
 
-		<ul class="nav nav-tabs">
-			<li class="active">
-			<a href="#">Home</a>
-			</li>
-			<li><a href="#">...</a></li>
-			<li><a href="#">...</a></li>
-		</ul>
+	</head>
+	<body>		 
+		<!-- <canvas class="opCanvas" id="myCanvas">
+			Please use a HTML5 compatible browser
+		</canvas> -->
 
-		<canvas id="mybitch">
-			
-		</canvas>
+
+ 		<header>
+ 			<div class="header-container">
+	 			<!-- Social Media -->
+				<div class="name">
+					<a href="#">
+						David Zhang
+					</a>
+				</div>
+
+				<!-- Section -->
+				<div class="button">
+					<a href="#hobby">
+						<i class="fa fa-heart"></i>
+					</a>
+				</div>
+				<div class="button">
+					<a href="#projects">
+						<i class="fa fa-code"></i>
+					</a>
+				</div>
+				<div class="button">
+					<a href="#resume">
+						<i class="fa fa-suitcase"></i>
+					</a>
+				</div>
+				<div class="button">
+					<a href="#education">
+						<i class="fa fa-book"></i>
+					</a>
+				</div>
+				
+			</div>
+ 		</header>
+
+		<!-- MAIN BODY -->
+		<div class="container-fluid">
+			<div class="row-fluid">
+				<div class="span12">
+					<div class="hero-unit" id="about">
+						<!-- Heading -->
+						<h1 style="text-align:center">About</h1>
+						<h3 style="text-align:center">Software Developer & Designer</h3>
+						<a href="David_Zhang_Resume.pdf">
+							<div class="about-resume">
+								<font color="#000000">VIEW RESUME</font>
+							</div>
+						</a>
+						<br>
+						<!-- Description -->
+						<div class="about-description">
+							<p>
+							Hey! My name is David. <br/>
+							<div></div>
+							I'm a Software Developer by day with a passion for new 
+							technologies. At night, I turn into a code ninja working on 
+							the next big idea. This website hopefully will let you get 
+							to know me a bit better :)
+							</p>
+						</div>
+
+					</div>
+
+					<div class="hero-unit" id="education">
+						<h1 style="text-align:center">Education</h1>
+						<br>
+						<div class="row-fluid">
+							<div class="uoft-description span6">
+								<p>
+									<li class="uoft-text">University of Toronto</li>
+									<li class="uoft-text">Bachelor of Applied Arts</li>
+									<li class="uoft-text">Computer Engineering</li>
+									<li class="uoft-text-mobile">UofT</li>
+									<li class="uoft-text-mobile">Applied Science</li>
+									<li class="uoft-text-mobile">Computer Eng</li>
+								</p>
+							</div>
+							<div class="uoft-container span6">
+								<img class="uoft-image" src="img/uoft-logo.png"/>
+							</div>
+						</div>
+						<div class="row-fluid">
+						</div>
+						
+					</div>
+
+					<div class="hero-unit" id="resume">
+						<h1 style="text-align:center">Resume</h1>
+						<h2>Skills</h2>
+						Objective-C, Java, C, C++, Cocos2d, OpenGL, SQL, HTML, and CSS
+						Xcode, Git, MySQL, PostgreSQL, MongoDB, Eclipse, and Agile
+						<h2>Work Experience</h2>
+						<h2>Projects</h2>
+					</div>
+
+					<div class="hero-unit" id="projects">
+						<h1 style="text-align:center">Projects</h1>
+						<h2>Legends<h2>
+					</div>		
+
+					<div class="hero-unit" id="hobby">
+						<h1 style="text-align:center">Hobby</h1>
+						<h2>Some stuff<h2>
+						<h2>Some stuff<h2>
+						<h2>Some stuff<h2>
+					</div>		
+				</div>
+			</div>
+		</div>
+
+		<footer>
+			<div class="footer-container">
+				<!-- Social Media -->
+				<div class="contact">
+					<a style="color:#FFFFFF" href="mailto:zyq.david@gmail.com">zyq.david@gmail.com</a>
+				</div>
+				<div class="button">
+					<a href="https://github.com/EzGame">
+						<i class="fa fa-github-square"></i>
+					</a>
+				</div>
+				<div class="button">
+					<a href="https://www.facebook.com/david.zhang.98">
+						<i class="fa fa-facebook-square"></i>
+					</a>
+				</div>
+				<div class="button">
+					<a href="http://www.linkedin.com/in/dzhang91">
+						<i class="fa fa-linkedin-square"></i>
+					</a>
+				</div>
+			</div>
+		</footer>
 	</body>
-</html>
 
-<script>
-	var c = document.getElementById("myCanvas");
-	var ctx = c.getContext("2d");
-	ctx.fillStyle = "#FF0000";
-	ctx.fillRect(0,0,150,75);
-</script>
+	<script>
+	// var canvas = document.getElementById("myCanvas");
+	var about_div = document.getElementById('about');
+	var about_height;
+    var education_div = document.getElementById('education');
+    var education_height;
+    var resume_div = document.getElementById('resume');
+    var resume_height;
+    var hobby_div = document.getElementById('hobby');
+    var hobby_height;
+
+
+	$(document).ready(function() {      
+		var window_height = $(window).height();
+
+		// Highlight ID
+		$(window).scroll(function() {
+			var scrollMiddle = $(window).scrollTop() + (window_height/2);
+			$('div[class^="hero-unit"]').each(function() {
+				elTop = $(this).offset().top;
+				elBtm = elTop + $(this).height();
+				if (elTop < scrollMiddle && elBtm > scrollMiddle) {
+					// Activate
+					$(this).css('background-color',"#ff0000");
+					// $(this).css('background','url("img/about-pic.png")');
+				} else {
+					// Disable
+					$(this).css('background-color',"#eeeeee");
+				}
+			});
+		});
+
+		// Scroll to ID
+		$(function() {
+			// Button links
+			$('.button a').bind('click',function(event){
+				var $anchor = $(this);
+				$('html, body').stop().animate({
+				scrollTop: $($anchor.attr('href')).offset().top - 60
+				}, 1000);
+				event.preventDefault();
+			});
+			// Name links
+			$('.name a').bind('click',function(event){
+				$('html, body').stop().animate({
+					scrollTop: 0
+				}, 1000);
+				event.preventDefault();
+			});
+		});	
+	});
+
+	function addListeners() {
+		window.addEventListener("resize", windowResize, false)
+		canvas.addEventListener("mousedown", doMouseDown, false);
+	}
+	
+	function initPage() {
+		addListeners();
+	}
+
+	// function windowResize() {
+	// 	resizePageHeights();
+	// 	resizeCanvas();
+	// }
+
+	// function resizePageHeights() {
+	// 	about.style.height = =75vh;
+	// 	education.style.height = 75vh;
+	// 	Resume.style.height = 75vh;
+	// 	hobby.style.height = 75vh;
+	// }
+
+	// function resizeCanvas() {
+	// 	canvas.width = window.innerWidth * 0.95;
+	// 	canvas.height = 400;
+	// 	// We have to call draw to resize elements
+	// 	draw();
+	// }
+
+
+
+	// function draw() {
+	// 	// Create image
+	// 	var me = new Image();
+	// 	me.src = 'img/me.png';
+
+	// 	// Draw on load
+	// 	me.onload = function() {
+	// 		var width;
+	// 		if ( canvas.width > 550 ) width = canvas.width - 640;
+	// 		else width = -90;
+
+	// 		context.drawImage(me, width, 0);
+	// 	}
+
+	// 	// name
+	// 	context.font = "70px Consolas";
+	// 	context.fillText("David Zhang", 50,100);
+	// }
+
+	// function doMouseDown(event) {
+	// 	touch_x = event.pageX;
+	// 	touch_y = event.pageY;
+	// 	console.log("Touch event x: " + touch_x + " y: " + touch_y);
+
+	// 	// At this point, touch happened, transition into nav bars
+	// 	canvas.style.opacity = 0;
+	// 	setTimeout(function() {
+	// 		canvas.style.display = "none";
+	// 	}, 2000);
+	// 	setTimeout(function() {
+	// 		main_nav.style.display = "block";
+	// 	}, 1000);
+	// }
+	</script>
+</html>
