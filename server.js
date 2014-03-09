@@ -57,7 +57,7 @@ var server = http.createServer(function(request, response){
 
 	console.log(request.url);
 	if(request.url == '/'){
-		filePath = 'index.html'; //serve this as default
+		filePath = 'website.html'; //serve this as default
 	} else {
 		filePath =  request.url; //translate url path to relative file path
 	}
