@@ -195,12 +195,13 @@ body {
 				height: 20px;
 				margin: 0px;
 				background-color: #1a1a1a !important;
-				background-image: linear-gradient(to bottom,#151515,#1a1a1a);
+				background-image: linear-gradient(to bottom,#101010,#1a1a1a);
 			}
 				.progress .bar {
 					text-align: left;
-					padding-left: 5px;
+					padding-left: 10px;
 					line-height: 20px;
+					border-radius: 4px;
 				}
 
 

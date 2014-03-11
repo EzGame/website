@@ -47,9 +47,7 @@ function serveStatic(response, cache, absPath){
 			}
 		});
 	}
-
 }
-
 
 //create httpserver using anon function to define per-request behaviour
 var server = http.createServer(function(request, response){

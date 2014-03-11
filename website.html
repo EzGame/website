@@ -223,29 +223,6 @@
 									<button type="button" class="close" data-dismiss="alert">&times;</button>
 									<strong>Warning!</strong> Best check yo self, you're not looking too good.
 								</div> -->
-								<div class="skill-list">Back-End Development</div>
-								<div class="skill-expand">
-									<div class="row-fluid">
-										<div class="progress">
-											<div class="bar" style="width: 90%;">Objective C</div>
-										</div>
-									</div>
-									<div class="row-fluid">
-										<div class="progress">
-											<div class="bar" style="width: 90%;">Java</div>
-										</div>
-									</div>
-									<div class="row-fluid">
-										<div class="progress">
-											<div class="bar" style="width: 80%;">C</div>
-										</div>
-									</div>
-									<div class="row-fluid">
-										<div class="progress">
-											<div class="bar" style="width: 70%;">C++</div>
-										</div>
-									</div>
-								</div>
 								<div class="skill-list">Front-End Development</div>
 								<div class="skill-expand">
 									<div class="row-fluid">
@@ -266,6 +243,29 @@
 									<div class="row-fluid">
 										<div class="progress">
 											<div class="bar" style="width: 80%;">JavaScript</div>
+										</div>
+									</div>
+								</div>
+								<div class="skill-list">Back-End Development</div>
+								<div class="skill-expand">
+									<div class="row-fluid">
+										<div class="progress">
+											<div class="bar" style="width: 90%;">Objective C</div>
+										</div>
+									</div>
+									<div class="row-fluid">
+										<div class="progress">
+											<div class="bar" style="width: 90%;">Java</div>
+										</div>
+									</div>
+									<div class="row-fluid">
+										<div class="progress">
+											<div class="bar" style="width: 80%;">C</div>
+										</div>
+									</div>
+									<div class="row-fluid">
+										<div class="progress">
+											<div class="bar" style="width: 70%;">C++</div>
 										</div>
 									</div>
 								</div>
@@ -523,7 +523,19 @@
 					event.preventDefault();
 					$(this).slideUp("slow");
 				});
-			});	
+			});
+
+			// Init 
+			$(".progress .bar").each(function() {
+				var value = parseInt($(this).css("width").replace('%', ''))/100;
+				var r = Math.floor(200*(1-(value*value*value)));
+				var g = 50;
+				var b = Math.floor(200*(value*value*value));
+				var color = hexc('rgb('+r+','+g+','+b+')');
+				var color2 = hexc('rgb('+(r+55)+','+g+','+(b+55)+')');
+				$(this).css('background-image','linear-gradient(to top,'+color+','+color2+')');
+				$(this).css('background-color',color);
+			});
    		}); 
 
 	</script>
