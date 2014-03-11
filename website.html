@@ -5,24 +5,34 @@
 		<title>David's Online Portfolio</title>
 
 		<!-- Meta tags -->
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 		<meta charset="utf-8">
 		<meta name="description" content="About David Zhang">
 		<meta name="author" content="David Zhang">
 
 		<!-- CSS -->
 		<link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
-		<link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono' rel='stylesheet' type='text/css'>
+		<link href="http://fonts.googleapis.com/css?family=Ubuntu+Mono" rel="stylesheet" type="text/css">
 		<link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
 		<link href="css/style.css" rel="stylesheet" media="screen">
 
 		<!-- Javascripts -->
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+		<script src="js/jquery.easypiechart.min.js"></script>
+		<!-- <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.12/angular.min.js"></script> -->
 		<script src="js/bootstrap.min.js"></script>
-		<script src="js/slidebars.min.js"></script>
-
 	</head>
-	<body>		 
+	<body>
+
+
+
+
+
+
+
+
+
+
 		<!-- HEADER -->
  		<header>
  			<div class="header-container">
@@ -57,6 +67,15 @@
 			</div>
  		</header>
 
+
+
+
+
+
+
+
+
+
 		<!-- MAIN BODY -->
 		<div class="container-fluid">
 			<div class="row-fluid">
@@ -70,13 +89,14 @@
 						</h1>
 						<h3 style="text-align:center">
 							Software Developer & Designer
+							<!-- Visionary -->
 						</h3>
 						<a href="David_Zhang_Resume.pdf">
 							<div class="about-resume">
 								<font color="#000000">VIEW RESUME</font>
 							</div>
 						</a>
-						<br>
+						<hr>
 
 						<!-- Description -->
 						<div class="about-description">
@@ -90,6 +110,16 @@
 							</p>
 						</div>
 					</div>
+
+
+
+
+
+
+
+
+
+
 
 					<!-- EDUCATION -->
 					<div class="hero-unit" id="education">
@@ -134,18 +164,30 @@
 						</div>
 					</div>
 
+
+
+
+
+
+
+
+
+
+
 					<!-- RESUME -->
 					<div class="hero-unit" id="resume">
 						<h1 style="text-align:center">
 							RESUME
 						</h1>
-						<h3>Skills</h3>
+						
+						<!-- Normal Resume -->
 						<div class="normal">
+							<h3>Skills</h3>
 							<div class="row-fluid">
 								<div class="span4">
 									<h4 class="skill-header">Languages</h4>
 									<li class="skill-list">Objective-C</li>
-									<li class="skill-list">HTML & CSS</li>
+									<li class="skill-list">HTML5 & CSS3</li>
 									<li class="skill-list">JS & JQuery</li>
 									<li class="skill-list">Java</li>
 									<li class="skill-list">C & C++</li>
@@ -172,44 +214,180 @@
 							<h3>Experience</h3>
 							<p>IBM</p>
 						</div>
+
+						<!-- Mobile Resume -->
 						<div class="mobile">
+							<h3 style="text-align:center;">Skills</h3>
 							<div class="row-fluid">
-								<h4 class="skill-header">Languages</h4>
-								<li class="skill-list">Objective-C</li>
-								<li class="skill-list">HTML & CSS</li>
-								<li class="skill-list">JS & JQuery</li>
-								<li class="skill-list">Java</li>
-								<li class="skill-list">C & C++</li>
+								<!-- <div class="alert">
+									<button type="button" class="close" data-dismiss="alert">&times;</button>
+									<strong>Warning!</strong> Best check yo self, you're not looking too good.
+								</div> -->
+								<div class="skill-list">Back-End Development</div>
+								<div class="skill-expand">
+									<div class="row-fluid">
+										<div class="progress">
+											<div class="bar" style="width: 90%;">Objective C</div>
+										</div>
+									</div>
+									<div class="row-fluid">
+										<div class="progress">
+											<div class="bar" style="width: 90%;">Java</div>
+										</div>
+									</div>
+									<div class="row-fluid">
+										<div class="progress">
+											<div class="bar" style="width: 80%;">C</div>
+										</div>
+									</div>
+									<div class="row-fluid">
+										<div class="progress">
+											<div class="bar" style="width: 70%;">C++</div>
+										</div>
+									</div>
+								</div>
+								<div class="skill-list">Front-End Development</div>
+								<div class="skill-expand">
+									<div class="row-fluid">
+										<div class="progress">
+											<div class="bar" style="width: 100%;">HTML5</div>
+										</div>
+									</div>
+									<div class="row-fluid">
+										<div class="progress">
+											<div class="bar" style="width: 100%;">CSS</div>
+										</div>
+									</div>
+									<div class="row-fluid">
+										<div class="progress">
+											<div class="bar" style="width: 90%;">JQuery</div>
+										</div>
+									</div>
+									<div class="row-fluid">
+										<div class="progress">
+											<div class="bar" style="width: 80%;">JavaScript</div>
+										</div>
+									</div>
+								</div>
+								<div class="skill-list">Frameworks</div>
+								<div class="skill-expand">
+									<div class="row-fluid">
+										<div class="progress">
+											<div class="bar" style="width: 100%;">Cocos2d</div>
+										</div>
+									</div>
+									<div class="row-fluid">
+										<div class="progress">
+											<div class="bar" style="width: 80%;">OpenGL</div>
+										</div>
+									</div>
+									<div class="row-fluid">
+										<div class="progress">
+											<div class="bar" style="width: 60%;">OpenCV</div>
+										</div>
+									</div>
+									<div class="row-fluid">
+										<div class="progress">
+											<div class="bar" style="width: 40%;">Node.js</div>
+										</div>
+									</div>
+								</div>
+								<div class="skill-list">Technologies</div>
+								<div class="skill-expand">
+									<div class="row-fluid">
+										<div class="progress">
+											<div class="bar" style="width: 90%;">Xcode</div>
+										</div>
+									</div>
+									<div class="row-fluid">
+										<div class="progress">
+											<div class="bar" style="width: 90%;">Unix</div>
+										</div>
+									</div>
+									<div class="row-fluid">
+										<div class="progress">
+											<div class="bar" style="width: 70%;">Git</div>
+										</div>
+									</div>
+									<div class="row-fluid">
+										<div class="progress">
+											<div class="bar" style="width: 60%;">PostgreSQL</div>
+										</div>
+									</div>
+									<div class="row-fluid">
+										<div class="progress">
+											<div class="bar" style="width: 40%;">MongoDB</div>
+										</div>
+									</div>
+								</div>
 							</div>
+							<hr>
+							<h3 style="text-align:center;">Experience</h3>
 							<div class="row-fluid">
-								<h4 class="skill-header">Frameworks</h4>
-								<li class="skill-list">Cocos2d</li>
-								<li class="skill-list">OpenGL</li>
-								<li class="skill-list">OpenCV</li>
-								<li class="skill-list">OpenSSL</li>
+								<div class="ibm-container span12">
+									<div class="ibm-image span6">
+										<img src="img/ibm-db2-logo.png"/>
+									</div>
+									<div class="ibm-duration span6">
+										Start: May 2013 <br/>
+										  End: Aug 2014
+									</div>
+								</div>
 							</div>
-							<div class="row-fluid">
-								<h4 class="skill-header">Technologies</h4>
-								<li class="skill-list">Xcode</li>
-								<li class="skill-list">Unix</li>
-								<li class="skill-list">Git</li>
-								<li class="skill-list">PostgreSQL</li>
-								<li class="skill-list">MongoDB</li>
-								<li class="skill-list">Agile</li>
-							</div>
-							
 							<br/>
-							<h3>Experience</h3>
-							<p>IBM</p>
+							<div class="row-fluid">
+								<div class="ibm-description span12">
+									<li>Implemented external and internal data analytical tools for DB2 10.2</li>
+									<li>Worked closely with release team to meet strict release schedules</li>
+									<li>Wrote automated testsuites for supported DB2 versions</li>
+								</div>
+							</div>
 						</div>
 					</div>
+
+
+
+
+
+
+
+
+
+
 
 					<div class="hero-unit" id="projects">
 						<h1 style="text-align:center">PROJECTS</h1>
 						<h3>Legends<h3>
 						<h3>Legends<h3>
 						<h3>Legends<h3>	
+						<h3>Make into Carousel<h3>	
+						<!-- <div id="myCarousel" class="carousel slide">
+						<ol class="carousel-indicators">
+						<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+						<li data-target="#myCarousel" data-slide-to="1"></li>
+						<li data-target="#myCarousel" data-slide-to="2"></li>
+						</ol>
+						
+						<div class="carousel-inner">
+						<div class="active item">…</div>
+						<div class="item">…</div>
+						<div class="item">…</div>
+						</div>
+						
+						<a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+						<a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
+						</div> -->
 					</div>		
+
+
+
+
+
+
+
+
+
+
 
 					<div class="hero-unit" id="hobbies">
 						<h1 style="text-align:center">HOBBIES</h1>
@@ -223,6 +401,16 @@
 				</div> <!-- SPAN12 -->
 			</div> <!-- ROW-FLUID -->
 		</div> <!-- CONTAINER-FLUID -->
+
+
+
+
+
+
+
+
+
+
 
 		<!-- FOOTER -->
 		<footer>
@@ -252,117 +440,91 @@
 		</footer>
 	</body>
 
+
 	<script>
-	$(document).ready(function() {      
-		var window_height = $(window).height();
+		// Helper functions
+		$.fn.exists = function () {
+ 		   return this.length !== 0;
+		}
+		// Turn rgb() -> #hex
+		function hexc(colorval) {
+		    var parts = colorval.match(/^rgb\((\d+),\s*(\d+),\s*(\d+)\)$/);
+		    delete(parts[0]);
+		    for (var i = 1; i <= 3; ++i) {
+		        parts[i] = parseInt(parts[i]).toString(16);
+		        if (parts[i].length == 1) parts[i] = '0' + parts[i];
+		    }
+		    return '#' + parts.join('');
+		}
 
-		// Highlight ID
-		$(window).scroll(function() {
-			var scrollMiddle = $(window).scrollTop() + (window_height/3);
-			$('div[class^="hero-unit"]').each(function() {
-				elTop = $(this).offset().top;
-				elBtm = elTop + $(this).height();
-				if (elTop < scrollMiddle && elBtm > scrollMiddle) {
-					// Enable
-					if ($(this).attr('id') == 'about')
-						$(this).css('background-color',"#CFF09E");
-					else if ($(this).attr('id') == 'education')
-						$(this).css('background-color',"#A8DBA8");
-					else if ($(this).attr('id') == 'resume')
-						$(this).css('background-color',"#79BD9A");
-					else if ($(this).attr('id') == 'projects')
-						$(this).css('background-color',"#3B8686");
-					else if ($(this).attr('id') == 'hobbies')
-						$(this).css('background-color',"#0B486B");
-				} else {
-					// Disable
-					$(this).css('background-color',"#eeeeee");
-				}
+		$(document).ready(function() {
+			// Highlight ID
+			var $windowHeight = $(window).height();
+			var $windowWidth = $(window).width();
+			$(window).resize(function() {
+				console.log("Resizing Window")
+				windowHeight = $(window).height();
+				windowWidth = $(window).width();
 			});
-		});
 
-		// Scroll to ID
-		$(function() {
-			// Button links
-			$('.button a').bind('click',function(event){
-				var $anchor = $(this);
-				$('html, body').stop().animate({
-				scrollTop: $($anchor.attr('href')).offset().top - 60
-				}, 1000);
-				event.preventDefault();
+			$(window).scroll(function() {
+				var scrollMiddle = $(window).scrollTop() + ($windowHeight/3);
+				$('div[class^="hero-unit"]').each(function() {
+					elTop = $(this).offset().top;
+					elBtm = elTop + $(this).height();
+					if (elTop < scrollMiddle && elBtm > scrollMiddle) {
+						// Enable background
+						if ($(this).attr('id') == 'about')
+							$(this).css('background-color',"#CFF09E");
+						else if ($(this).attr('id') == 'education')
+							$(this).css('background-color',"#A8DBA8");
+						else if ($(this).attr('id') == 'resume')
+							$(this).css('background-color',"#79BD9A");
+						else if ($(this).attr('id') == 'projects')
+							$(this).css('background-color',"#3B8686");
+						else if ($(this).attr('id') == 'hobbies')
+							$(this).css('background-color',"#0B486B");
+						// Enable header underline
+						// $(this).find(">:first-child").css('text-decoration','underline');
+					} else {
+						// Disable both
+						$(this).css('background-color',"#eeeeee");
+						// $(this).find(">:first-child").css('text-decoration','none');
+					}
+				});
 			});
-			// Name links
-			$('.name a').bind('click',function(event){
-				$('html, body').stop().animate({
-					scrollTop: 0
-				}, 1000);
-				event.preventDefault();
-			});
-		});	
-	});
 
-	// function addListeners() {
-	// 	window.addEventListener("resize", windowResize, false)
-	// 	canvas.addEventListener("mousedown", doMouseDown, false);
-	// }
-	
-	// function initPage() {
-	// 	addListeners();
-	// }
+			// Click event bindings
+			$(function() {
+				// Button links
+				$('.button a').click(function(event){
+					var $anchor = $(this);
+					$('html, body').stop().animate({
+						scrollTop: $($anchor.attr('href')).offset().top - 60
+					}, 1000);
+					event.preventDefault();
+				});
+				// Name links
+				$('.name a').click(function(event){
+					$('html, body').stop().animate({
+						scrollTop: 0
+					}, 1000);
+					event.preventDefault();
+				});
 
-	// function windowResize() {
-	// 	resizePageHeights();
-	// 	resizeCanvas();
-	// }
+				// Skill expand
+				$(".skill-list").click(function(event) {
+					event.preventDefault();
+					$(this).next(".skill-expand").slideToggle("slow")
+					.siblings(".skill-expand").slideUp("slow");
+					
+				});
+				$(".skill-expand").click(function(event) {
+					event.preventDefault();
+					$(this).slideUp("slow");
+				});
+			});	
+   		}); 
 
-	// function resizePageHeights() {
-	// 	about.style.height = =75vh;
-	// 	education.style.height = 75vh;
-	// 	Resume.style.height = 75vh;
-	// 	hobbies.style.height = 75vh;
-	// }
-
-	// function resizeCanvas() {
-	// 	canvas.width = window.innerWidth * 0.95;
-	// 	canvas.height = 400;
-	// 	// We have to call draw to resize elements
-	// 	draw();
-	// }
-
-
-
-	// function draw() {
-	// 	// Create image
-	// 	var me = new Image();
-	// 	me.src = 'img/me.png';
-
-	// 	// Draw on load
-	// 	me.onload = function() {
-	// 		var width;
-	// 		if ( canvas.width > 550 ) width = canvas.width - 640;
-	// 		else width = -90;
-
-	// 		context.drawImage(me, width, 0);
-	// 	}
-
-	// 	// name
-	// 	context.font = "70px Consolas";
-	// 	context.fillText("David Zhang", 50,100);
-	// }
-
-	// function doMouseDown(event) {
-	// 	touch_x = event.pageX;
-	// 	touch_y = event.pageY;
-	// 	console.log("Touch event x: " + touch_x + " y: " + touch_y);
-
-	// 	// At this point, touch happened, transition into nav bars
-	// 	canvas.style.opacity = 0;
-	// 	setTimeout(function() {
-	// 		canvas.style.display = "none";
-	// 	}, 2000);
-	// 	setTimeout(function() {
-	// 		main_nav.style.display = "block";
-	// 	}, 1000);
-	// }
 	</script>
 </html>
