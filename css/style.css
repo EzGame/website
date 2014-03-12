@@ -152,7 +152,7 @@ body {
 #education {
 }
 	.uoft-container {
-		text-align: center
+		text-align: center;
 		padding: auto;
 	}
 		.uoft-image {
@@ -166,7 +166,6 @@ body {
 		text-align: right;
 	}
 		.uoft-text{
-			margin-right: 10px;
 			list-style: none;
 			display: block;
 		}
@@ -186,10 +185,12 @@ body {
 				color:#ff0000;
 			}
 		.skill-expand{
-			border-radius: 10px;
-			display: none;
-			margin:0px;
+			margin:auto;
 			padding:0px;
+			height:0px;
+
+			width:80%;
+			overflow: hidden;
 		}
 			.progress{
 				height: 20px;
@@ -218,6 +219,12 @@ body {
 	.ibm-description {
 		text-align: center;
 	}
+		.ibm-text{
+			font-size: 15px;
+			line-height: 15px;
+			margin-top: 10px;
+			height: 30px;
+		}
 
 #projects {
 }
