@@ -6,21 +6,20 @@
 
 		<!-- Meta tags -->
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-		<meta charset="utf-8">
 		<meta name="description" content="About David Zhang">
 		<meta name="author" content="David Zhang">
+		<meta charset="utf-8">
 
 		<!-- CSS -->
+		<link href="http://fonts.googleapis.com/css?family=Ubuntu+Mono" rel="stylesheet">
 		<link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
-		<link href="http://fonts.googleapis.com/css?family=Ubuntu+Mono" rel="stylesheet" type="text/css">
-		<link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+		<!-- <link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet"> -->
+		<link href="css/bootstrap.min.css" rel="stylesheet">
 		<link href="css/style.css" rel="stylesheet" media="screen">
 
 		<!-- Javascripts -->
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-		<script src="js/jquery.easypiechart.min.js"></script>
-		<!-- <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.12/angular.min.js"></script> -->
-		<script src="js/bootstrap.min.js"></script>
+		<script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 	</head>
 	<body>
 
@@ -254,17 +253,17 @@
 									<div class="bar" data-strength="40">MongoDB</div>
 								</div>
 							</div>
-
 							<hr>
 							<h3 style="text-align:center;">Experience</h3>
 							<div class="row-fluid">
 								<div class="ibm-container span12">
-									<div class="ibm-image span6">
-										<img src="img/ibm-db2-logo.png"/>
-									</div>
-									<div class="ibm-duration span6">
-										Start:May 2013 <br/>
-										  End:Aug 2014
+									<div class="ibm-container-fade">
+										<div class="ibm-image span6">
+											<img src="img/ibm-db2-logo.png"/>
+										</div>
+										<div class="ibm-duration span6">
+											May 2013 - Aug 2014
+										</div>
 									</div>
 								</div>
 							</div>
@@ -358,12 +357,13 @@
 							<h3 style="text-align:center;">Experience</h3>
 							<div class="row-fluid">
 								<div class="ibm-container span12">
-									<div class="ibm-image span6">
-										<img src="img/ibm-db2-logo.png"/>
-									</div>
-									<div class="ibm-duration span6">
-										Start:May 2013 <br/>
-										  End:Aug 2014
+									<div class="ibm-container-fade">
+										<div class="ibm-image span6">
+											<img src="img/ibm-db2-logo.png"/>
+										</div>
+										<div class="ibm-duration span6">
+											May 2013 - <br/>Aug 2014
+										</div>
 									</div>
 								</div>
 							</div>
@@ -390,21 +390,42 @@
 
 					<div class="hero-unit" id="projects">
 						<h1 style="text-align:center">PROJECTS</h1>
-						<div id="myCarousel" class="carousel slide">
-							<ol class="carousel-indicators">
-								<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-								<li data-target="#myCarousel" data-slide-to="1"></li>
-								<li data-target="#myCarousel" data-slide-to="2"></li>
-							</ol>
+						<br/>
+						<!-- Normal -->
+						<div class="normal">
+							<div id="myCarousel" class="carousel slide">
+								<ol class="carousel-indicators">
+									<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+									<li data-target="#myCarousel" data-slide-to="1"></li>
+									<li data-target="#myCarousel" data-slide-to="2"></li>
+								</ol>
+								
+								<div class="carousel-inner">
+									<div class="active item">Legends</div>
+									<div class="item">Lego Sorter</div>
+									<div class="item">This</div>
+								</div>
 							
-							<div class="carousel-inner">
-								<div class="active item">…</div>
-								<div class="item">…</div>
-								<div class="item">…</div>
+								<a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+								<a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
 							</div>
-						
-							<a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
-							<a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
+						</div>
+
+						<!-- Mobile -->
+						<div class="mobile">
+							<div id="myCarousel" class="carousel slide">
+								<ol class="carousel-indicators">
+									<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+									<li data-target="#myCarousel" data-slide-to="1"></li>
+									<li data-target="#myCarousel" data-slide-to="2"></li>
+								</ol>
+								
+								<div class="carousel-inner">
+									<div class="active item">Legends</div>
+									<div class="item">Lego Sorter</div>
+									<div class="item">This</div>
+								</div>
+							</div>
 						</div>
 					</div>		
 
@@ -492,7 +513,6 @@
 			var $windowWidth = $(window).width();
 
 			$(window).resize(function() {
-				console.log("Resizing Window")
 				windowHeight = $(window).height();
 				windowWidth = $(window).width();
 			});
@@ -572,6 +592,19 @@
 					$(this).css("height","0px").children(".progress").each(function(){
 						$(this).children(":first").css("width","0px").animate(4000);
 					});;
+				});
+			});
+
+			// Swipe event bindings
+			$(function() {
+				// Mobile Carousel Swipe Right
+				$(".mobile").children(".myCarousel").on("swiperight",function(){
+					$(this).data("swipe","prev");
+				});
+
+				// Mobile Carousel Swipe Left
+				$(".mobile").children(".myCarousel").on("swipeleft",function(){
+					$(this).data("swipe","next");	
 				});
 			});
 
