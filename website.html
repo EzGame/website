@@ -13,13 +13,14 @@
 		<!-- CSS -->
 		<link href="http://fonts.googleapis.com/css?family=Ubuntu+Mono" rel="stylesheet">
 		<link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
-		<!-- <link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet"> -->
-		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<link href="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.css" rel="stylesheet">
+		<link href="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/css/bootstrap.min.css" rel="stylesheet">
 		<link href="css/style.css" rel="stylesheet" media="screen">
 
 		<!-- Javascripts -->
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-		<script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.1/jquery.mobile.min.js"></script>
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
 	</head>
 	<body>
 
@@ -415,15 +416,15 @@
 						<div class="mobile">
 							<div id="myCarousel" class="carousel slide">
 								<ol class="carousel-indicators">
-									<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+									<li data-target="#myCarousel" data-slide-to="0"></li>
 									<li data-target="#myCarousel" data-slide-to="1"></li>
-									<li data-target="#myCarousel" data-slide-to="2"></li>
+									<li data-target="#myCarousel" data-slide-to="2" class="active"></li>
 								</ol>
 								
 								<div class="carousel-inner">
-									<div class="active item">Legends</div>
+									<div class="item">Legends</div>
 									<div class="item">Lego Sorter</div>
-									<div class="item">This</div>
+									<div class="active item">THIS SHOULD BE SWIPABLE</div>
 								</div>
 							</div>
 						</div>
@@ -441,12 +442,12 @@
 
 					<div class="hero-unit" id="hobbies">
 						<h1 style="text-align:center">HOBBIES</h1>
-						<h3>Some stuff<h3>
-						<h3>Some stuff<h3>
-						<h3>Some stuff<h3>
-						<h3>Some stuff<h3>
-						<h3>Some stuff<h3>
-						<h3>Some stuff<h3>
+						<h3>U<h3>
+						<h3>N<h3>
+						<h3>D<h3>
+						<h3>E<h3>
+						<h3>R<h3>
+						<h3>Construction :)<h3>
 					</div>		
 				</div> <!-- SPAN12 -->
 			</div> <!-- ROW-FLUID -->
@@ -507,6 +508,10 @@
 		    return '#' + parts.join('');
 		}
 
+		$(document).bind("mobileinit", function(){
+			$( ".selector" ).loader( "hide" );
+		});
+		
 		$(document).ready(function() {
 			// Highlight ID
 			var $windowHeight = $(window).height();
@@ -598,13 +603,13 @@
 			// Swipe event bindings
 			$(function() {
 				// Mobile Carousel Swipe Right
-				$(".mobile").children(".myCarousel").on("swiperight",function(){
-					$(this).data("swipe","prev");
+				$("#myCarousel").swiperight(function(){
+					$(this).carousel('prev');
 				});
 
 				// Mobile Carousel Swipe Left
-				$(".mobile").children(".myCarousel").on("swipeleft",function(){
-					$(this).data("swipe","next");	
+				$("#myCarousel").swipeleft(function() { 
+					$(this).carousel('next');
 				});
 			});
 
@@ -619,6 +624,5 @@
 				$(this).css('background-color',color);
 			});
    		}); 
-
 	</script>
 </html>
