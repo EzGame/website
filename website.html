@@ -13,13 +13,11 @@
 		<!-- CSS -->
 		<link href="http://fonts.googleapis.com/css?family=Ubuntu+Mono" rel="stylesheet">
 		<link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
-		<link href="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.css" rel="stylesheet">
 		<link href="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/css/bootstrap.min.css" rel="stylesheet">
 		<link href="css/style.css" rel="stylesheet" media="screen">
 
 		<!-- Javascripts -->
-		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-		<script src="http://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.1/jquery.mobile.min.js"></script>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script
 		<script src="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
 	</head>
 	<body>
@@ -493,6 +491,35 @@
 
 
 	<script>
+		/* Javascript */
+		// myCarousel swipes
+		var touchStart;
+		var carousel = document.getElementById("myCarousel");
+		console.log(carousel);
+		carousel.addEventListener("touchstart", function (event) {
+			console.log("Start");
+			if (event.touches.length > 1) return;
+			touchStart = event.touches[0].clientX;
+			event.preventDefault();
+		});
+
+		carousel.addEventListener("touchmove", function (event) {
+			console.log("Move");
+			event.preventDefault();
+		});
+
+		carousel.addEventListener("touchend", function (event) {
+			console.log("End");
+			if (event.touches.length > 0) return;
+			var dx = event.changedTouches[0].clientX - touchStart;
+
+			if (Math.abs(dx) > 10) {
+				// Move this shit
+				(dx > 0) ? self.carousel('next') : self.carousel('prev');
+			}
+		});
+
+		/* JQuery */
 		// Helper functions
 		$.fn.exists = function () {
  		   return this.length !== 0;
@@ -533,8 +560,9 @@
 							$(this).css('background-color',"#CFF09E");
 						else if ($(this).attr('id') == 'education')
 							$(this).css('background-color',"#A8DBA8");
-						else if ($(this).attr('id') == 'resume')
+						else if ($(this).attr('id') == 'resume') {
 							$(this).css('background-color',"#79BD9A");
+						}
 						else if ($(this).attr('id') == 'projects')
 							$(this).css('background-color',"#3B8686");
 						else if ($(this).attr('id') == 'hobbies')
@@ -597,19 +625,6 @@
 					$(this).css("height","0px").children(".progress").each(function(){
 						$(this).children(":first").css("width","0px").animate(4000);
 					});;
-				});
-			});
-
-			// Swipe event bindings
-			$(function() {
-				// Mobile Carousel Swipe Right
-				$("#myCarousel").swiperight(function(){
-					$(this).carousel('prev');
-				});
-
-				// Mobile Carousel Swipe Left
-				$("#myCarousel").swipeleft(function() { 
-					$(this).carousel('next');
 				});
 			});
 
