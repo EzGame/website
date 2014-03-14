@@ -496,12 +496,11 @@
 			// myCarousel-mobile swipes
 			var touchStart;
 			var carousel = document.getElementById("myCarousel-mobile");
-			
+
 			carousel.addEventListener("touchstart", function(event) {
 				console.log("Start");
 				if (event.touches.length > 1) return;
 				touchStart = event.touches[0].clientX;
-				event.preventDefault();
 			});
 
 			carousel.addEventListener("touchmove", function(event) {
