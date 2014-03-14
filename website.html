@@ -496,7 +496,7 @@
 			// myCarousel-mobile swipes
 			var touchStart;
 			var carousel = document.getElementById("myCarousel-mobile");
-			console.log(carousel);
+			
 			carousel.addEventListener("touchstart", function(event) {
 				console.log("Start");
 				if (event.touches.length > 1) return;
@@ -506,7 +506,6 @@
 
 			carousel.addEventListener("touchmove", function(event) {
 				console.log("Move");
-				event.preventDefault();
 			});
 
 			carousel.addEventListener("touchend", function(event) {
@@ -516,6 +515,7 @@
 
 				if (Math.abs(dx) > 10) {
 					// Move this shit
+					alert("Sup" +dx);
 					(dx > 0) ? self.carousel('next') : self.carousel('prev');
 				}
 			});
