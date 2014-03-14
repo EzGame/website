@@ -412,17 +412,17 @@
 
 						<!-- Mobile -->
 						<div class="mobile">
-							<div id="myCarousel" class="carousel slide">
+							<div id="myCarousel-mobile" class="carousel slide">
 								<ol class="carousel-indicators">
-									<li data-target="#myCarousel" data-slide-to="0"></li>
-									<li data-target="#myCarousel" data-slide-to="1"></li>
-									<li data-target="#myCarousel" data-slide-to="2" class="active"></li>
+									<li data-target="#myCarousel-mobile" data-slide-to="0"></li>
+									<li data-target="#myCarousel-mobile" data-slide-to="1"></li>
+									<li data-target="#myCarousel-mobile" data-slide-to="2" class="active"></li>
 								</ol>
 								
 								<div class="carousel-inner">
 									<div class="item">Legends</div>
 									<div class="item">Lego Sorter</div>
-									<div class="active item">THIS SHOULD BE SWIPABLE</div>
+									<div class="active item">HI</div>
 								</div>
 							</div>
 						</div>
@@ -492,31 +492,33 @@
 
 	<script>
 		/* Javascript */
-		// myCarousel swipes
-		var touchStart;
-		var carousel = document.getElementById("myCarousel");
-		console.log(carousel);
-		carousel.addEventListener("touchstart", function (event) {
-			console.log("Start");
-			if (event.touches.length > 1) return;
-			touchStart = event.touches[0].clientX;
-			event.preventDefault();
-		});
+		window.addEventListener('load', function(){
+			// myCarousel-mobile swipes
+			var touchStart;
+			var carousel = document.getElementById("myCarousel-mobile");
+			console.log(carousel);
+			carousel.addEventListener("touchstart", function(event) {
+				console.log("Start");
+				if (event.touches.length > 1) return;
+				touchStart = event.touches[0].clientX;
+				event.preventDefault();
+			});
 
-		carousel.addEventListener("touchmove", function (event) {
-			console.log("Move");
-			event.preventDefault();
-		});
+			carousel.addEventListener("touchmove", function(event) {
+				console.log("Move");
+				event.preventDefault();
+			});
 
-		carousel.addEventListener("touchend", function (event) {
-			console.log("End");
-			if (event.touches.length > 0) return;
-			var dx = event.changedTouches[0].clientX - touchStart;
+			carousel.addEventListener("touchend", function(event) {
+				console.log("End");
+				if (event.touches.length > 0) return;
+				var dx = event.changedTouches[0].clientX - touchStart;
 
-			if (Math.abs(dx) > 10) {
-				// Move this shit
-				(dx > 0) ? self.carousel('next') : self.carousel('prev');
-			}
+				if (Math.abs(dx) > 10) {
+					// Move this shit
+					(dx > 0) ? self.carousel('next') : self.carousel('prev');
+				}
+			});
 		});
 
 		/* JQuery */
