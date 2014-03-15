@@ -17,7 +17,7 @@
 		<link href="css/style.css" rel="stylesheet" media="screen">
 
 		<!-- Javascripts -->
-		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 		<script src="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
 	</head>
 	<body>
@@ -393,20 +393,20 @@
 						<!-- Normal -->
 						<div class="normal">
 							<div id="myCarousel" class="carousel slide">
-								<ol class="carousel-indicators">
-									<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-									<li data-target="#myCarousel" data-slide-to="1"></li>
-									<li data-target="#myCarousel" data-slide-to="2"></li>
-								</ol>
-								
 								<div class="carousel-inner">
-									<div class="active item">Legends</div>
-									<div class="item">Lego Sorter</div>
-									<div class="item">This</div>
+									<div class="item active">
+										...
+									</div>
+									<div class="item">
+										...
+									</div>
+									<div class="item">
+										...
+									</div>
 								</div>
-							
-								<a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
-								<a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
+
+								<a class="left carousel-control" href="#myCarousel" data-slide="prev">‹</a>
+								<a class="right carousel-control" href="#myCarousel" data-slide="next">›</a>
 							</div>
 						</div>
 
@@ -498,24 +498,21 @@
 			var carousel = document.getElementById("myCarousel-mobile");
 
 			carousel.addEventListener("touchstart", function(event) {
-				console.log("Start");
 				if (event.touches.length > 1) return;
 				touchStart = event.touches[0].clientX;
 			});
 
-			carousel.addEventListener("touchmove", function(event) {
-				console.log("Move");
-			});
+			// carousel.addEventListener("touchmove", function(event) {
+			// });
 
-			carousel.addEventListener("touchend", function(event) {
-				console.log("End");
+			carousel.addEventListener("touchend", function(event) {				
 				if (event.touches.length > 0) return;
 				var dx = event.changedTouches[0].clientX - touchStart;
 
 				if (Math.abs(dx) > 10) {
-					// Move this shit
-					alert("Sup" +dx);
-					(dx > 0) ? self.carousel('next') : self.carousel('prev');
+					var $jQCarousel = $("#myCarousel-mobile");
+					(dx > 0) ? $(jQCarousel).carousel('next') : $(jQCarousel).carousel('prev');
+					// (dx > 0) ? self.carousel('next') : self.carousel('prev');
 				}
 			});
 		});
@@ -535,10 +532,6 @@
 		    }
 		    return '#' + parts.join('');
 		}
-
-		$(document).bind("mobileinit", function(){
-			$( ".selector" ).loader( "hide" );
-		});
 		
 		$(document).ready(function() {
 			// Highlight ID
@@ -561,9 +554,8 @@
 							$(this).css('background-color',"#CFF09E");
 						else if ($(this).attr('id') == 'education')
 							$(this).css('background-color',"#A8DBA8");
-						else if ($(this).attr('id') == 'resume') {
+						else if ($(this).attr('id') == 'resume')
 							$(this).css('background-color',"#79BD9A");
-						}
 						else if ($(this).attr('id') == 'projects')
 							$(this).css('background-color',"#3B8686");
 						else if ($(this).attr('id') == 'hobbies')
