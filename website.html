@@ -418,11 +418,10 @@
 									<li data-target="#myCarousel-mobile" data-slide-to="1"></li>
 									<li data-target="#myCarousel-mobile" data-slide-to="2" class="active"></li>
 								</ol>
-								
 								<div class="carousel-inner">
-									<div class="item">Legends</div>
-									<div class="item">Lego Sorter</div>
-									<div class="active item">HI</div>
+									<div class="item">...</div>
+									<div class="item">...</div>
+									<div class="active item">...</div>
 								</div>
 							</div>
 						</div>
@@ -508,14 +507,16 @@
 			carousel.addEventListener("touchend", function(event) {				
 				if (event.touches.length > 0) return;
 				var dx = event.changedTouches[0].clientX - touchStart;
-
 				if (Math.abs(dx) > 10) {
-					var $jQCarousel = $("#myCarousel-mobile");
-					alert($(jQCarousel));
-					(dx > 0) ? $(jQCarousel).carousel('next') : $(jQCarousel).carousel('prev');
-					// (dx > 0) ? self.carousel('next') : self.carousel('prev');
+					// Use jQuery, not sure how to do in JS
+					var $jQCarousel = $('#myCarousel-mobile');
+					(dx > 0) ? $jQCarousel.carousel('prev') : $jQCarousel.carousel('next');
 				}
 			});
+
+			// document.addEventListener("keydown", function(event) {
+			// 	console.log("key press fired");
+			// });
 		});
 
 
