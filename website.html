@@ -511,17 +511,20 @@
 
 				if (Math.abs(dx) > 10) {
 					var $jQCarousel = $("#myCarousel-mobile");
+					alert($(jQCarousel));
 					(dx > 0) ? $(jQCarousel).carousel('next') : $(jQCarousel).carousel('prev');
 					// (dx > 0) ? self.carousel('next') : self.carousel('prev');
 				}
 			});
 		});
 
+
 		/* JQuery */
 		// Helper functions
 		$.fn.exists = function () {
- 		   return this.length !== 0;
+			return this.length !== 0;
 		}
+
 		// Turn rgb() -> #hex
 		function hexc(colorval) {
 		    var parts = colorval.match(/^rgb\((\d+),\s*(\d+),\s*(\d+)\)$/);
