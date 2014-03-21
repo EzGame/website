@@ -115,6 +115,31 @@ h1 {
 	/*font-size: 2em;*/
 }
 
+#sidebar {
+	display: none;
+	position: fixed;
+	height: 100%;
+	width: 0px;
+	top: 0px;
+	right: 0px;
+	background-color: rgba(26,26,26,0.95);
+	overflow: hidden;
+	z-index: 1000;
+}
+	#sidebar .table thead {
+		background-color: rgba(42,42,42,0.85);
+		color: #fff;
+	}
+		#sidebar .table tbody tr td{
+			padding-left: 20px;
+		}
+			#sidebar .table tbody tr td a{
+				color: #2ec5ee;
+			}
+			#sidebar .table tbody tr td a:hover{
+				text-decoration: none;
+			}
+
 .container-fluid {
 	margin: 60px auto 60px auto;	
 }
@@ -270,11 +295,15 @@ h1 {
 
 	body {
 		background-color: #1a1a1a;
-		margin:0 0 0 0;
+		margin:0px 0px 0px 0px;
+	}
+
+	.container-fluid {
+		margin: 40px auto 50px auto;	
 	}
 
 	.hero-unit {
-		margin: 10px 0 0 0;
+		margin: 10px 50px 0 50px;
 		padding: 20px 20px 20px 20px;
 	}
 
@@ -298,31 +327,6 @@ h1 {
 	h1 {
 		font-size: 2em !important;
 	}
-
-	#sidebar {
-		display: block;
-		position: fixed;
-		height: 100%;
-		width: 0px;
-		top: 0px;
-		right: 0px;
-		background-color: rgba(26,26,26,0.95);
-		overflow: hidden;
-		z-index: 1000;
-	}
-		#sidebar .table thead {
-			background-color: rgba(42,42,42,0.85);
-			color: #fff;
-		}
-			#sidebar .table tbody tr td{
-				padding-left: 20px;
-			}
-				#sidebar .table tbody tr td a{
-					color: #2ec5ee;
-				}
-				#sidebar .table tbody tr td a:hover{
-					text-decoration: none;
-				}
 
 	.sidebar {
 		position: fixed;
