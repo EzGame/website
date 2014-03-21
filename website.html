@@ -21,18 +21,87 @@
 		<script src="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
 	</head>
 	<body>
-
-
-
-
-
-
-
-
+		<!-- Sidebar controls -->
+		<div class="sidebar button mobile">
+			<i class="fa fa-bars"></i>
+		</div>
+		<div id="sidebar">
+			<table class="table">
+				<thead><tr><th>
+					<div class="name">
+						Navigation
+					</div>
+				</th></tr></thead>
+				<tbody>
+					<tr><td>
+						<a href="#">
+							<i class="fa fa-male"></i>
+							About
+						</a>
+					</td></tr>
+					<tr><td>
+						<a href="#education">
+							<i class="fa fa-book"></i>
+							Education
+						</a>
+					</td></tr>
+					<tr><td>
+						<a href="#resume">
+							<i class="fa fa-suitcase"></i>
+							Resume
+						</a>
+					</td></tr>
+					<tr><td>
+						<a href="#projects">
+							<i class="fa fa-code"></i>
+							Projects
+						</a>
+					</td></tr>
+					<tr><td>
+						<a href="#hobbies">
+							<i class="fa fa-heart"></i>
+							Hobbies
+						</a>
+					</td></tr>
+				</tbody>	
+				<thead><tr><th>
+					<div class="name">
+						More
+					</div>
+				</th></tr></thead>
+				<tbody>
+					<tr><td>
+						<a href="mailto:zyq.david@gmail.com">
+							<i class="fa fa-envelope"></i>
+							zyq.david@gmail.com
+						</a>
+					</td></tr>
+					<tr><td>
+						<a href="https://github.com/EzGame">
+							<i class="fa fa-github-square"></i>
+							GitHub
+						</a>
+					</td></tr>
+					<tr><td>
+						<a href="https://www.facebook.com/david.zhang.98">
+							<i class="fa fa-facebook-square"></i>
+							Facebook
+						</a>
+					</td></tr>
+					<tr><td>
+						<a href="http://www.linkedin.com/in/dzhang91">
+							<i class="fa fa-linkedin-square"></i>
+							LinkedIn
+						</a>
+					</td></tr>
+				</tbody>	
+			</table>
+			TEST
+		</div>
 
 
 		<!-- HEADER -->
- 		<header>
+ 		<header class="normal">
  			<div class="header-container">
 	 			<!-- Social Media -->
 				<div class="name">
@@ -65,6 +134,32 @@
 			</div>
  		</header>
 
+		<!-- FOOTER -->
+		<footer class="normal">
+			<div class="footer-container">
+				<!-- Social Media -->
+				<div class="contact">
+					<a href="mailto:zyq.david@gmail.com">
+						zyq.david@gmail.com
+					</a>
+				</div>
+				<div class="button">
+					<a href="https://github.com/EzGame">
+						<i class="fa fa-github-square"></i>
+					</a>
+				</div>
+				<div class="button">
+					<a href="https://www.facebook.com/david.zhang.98">
+						<i class="fa fa-facebook-square"></i>
+					</a>
+				</div>
+				<div class="button">
+					<a href="http://www.linkedin.com/in/dzhang91">
+						<i class="fa fa-linkedin-square"></i>
+					</a>
+				</div>
+			</div>
+		</footer>
 
 
 
@@ -99,12 +194,12 @@
 						<!-- Description -->
 						<div class="about-description">
 							<p>
-							Hey! My name is David. <br/>
+							Hi! My name is David. <br/>
 							<div></div>
 							I'm a Software Developer by day with a passion for new 
 							technologies. At night, I turn into a code ninja working on 
-							the next big idea. This website hopefully will let you get 
-							to know me a bit better :)
+							the next big idea. This website will hopefully let you get 
+							to know me a little better :)
 							</p>
 						</div>
 					</div>
@@ -449,43 +544,6 @@
 				</div> <!-- SPAN12 -->
 			</div> <!-- ROW-FLUID -->
 		</div> <!-- CONTAINER-FLUID -->
-
-
-
-
-
-
-
-
-
-
-
-		<!-- FOOTER -->
-		<footer>
-			<div class="footer-container">
-				<!-- Social Media -->
-				<div class="contact">
-					<a href="mailto:zyq.david@gmail.com">
-						zyq.david@gmail.com
-					</a>
-				</div>
-				<div class="button">
-					<a href="https://github.com/EzGame">
-						<i class="fa fa-github-square"></i>
-					</a>
-				</div>
-				<div class="button">
-					<a href="https://www.facebook.com/david.zhang.98">
-						<i class="fa fa-facebook-square"></i>
-					</a>
-				</div>
-				<div class="button">
-					<a href="http://www.linkedin.com/in/dzhang91">
-						<i class="fa fa-linkedin-square"></i>
-					</a>
-				</div>
-			</div>
-		</footer>
 	</body>
 
 
@@ -519,7 +577,6 @@
 			// });
 		});
 
-
 		/* JQuery */
 		// Helper functions
 		$.fn.exists = function () {
@@ -541,6 +598,7 @@
 			// Highlight ID
 			var $windowHeight = $(window).height();
 			var $windowWidth = $(window).width();
+
 
 			$(window).resize(function() {
 				windowHeight = $(window).height();
@@ -571,8 +629,21 @@
 				});
 			});
 
+			$('body').stop().animate({scrollTop:0},1000);
+
 			// Click event bindings
 			$(function() {
+				// Sidebar launch
+				$('.sidebar.button').click(function(event){
+					var sidebar = $('#sidebar');
+					sidebar.css('width','200px');
+				});
+
+				// Sidebar close
+				$('#sidebar').click(function(event){
+					$(this).css('width','0px');
+				});
+
 				// Button links
 				$('.button a').click(function(event){
 					event.preventDefault();
