@@ -514,20 +514,24 @@
 
 
 	<script>
-		/* Javascript */
+		/*******************************************/
+		/* Javascript - load(); similar to ready() */
+		/*******************************************/
 		window.addEventListener('load', function(){
 			// myCarousel-mobile swipes
+			// We use javascript over jQuery as there is little from the jQuery mobile
+			// framework that we actually need outside of touch handling, where as
+			// the Javascript library is much simplier...
 			var touchStart;
 			var carousel = document.getElementById("myCarousel-mobile");
 
+			// Touch start
 			carousel.addEventListener("touchstart", function(event) {
 				if (event.touches.length > 1) return;
 				touchStart = event.touches[0].clientX;
 			});
 
-			// carousel.addEventListener("touchmove", function(event) {
-			// });
-
+			// Touch end
 			carousel.addEventListener("touchend", function(event) {				
 				if (event.touches.length > 0) return;
 				var dx = event.changedTouches[0].clientX - touchStart;
@@ -538,18 +542,22 @@
 				}
 			});
 
+			// Keyboard events
 			// document.addEventListener("keydown", function(event) {
 			// 	console.log("key press fired");
 			// });
-		});
+		}); /* Window.load() end */
 
-		/* JQuery */
-		// Helper functions
+		/*****************************/
+		/* JQuery - Helper functions */
+		/*****************************/
+		// A much needed function that doesnt 'exist' ;)
 		$.fn.exists = function () {
 			return this.length !== 0;
 		}
 
-		// Turn rgb() -> #hex
+		// Turns a rbg value to hex
+		// eg rgb(r,g,b) => #RRGGBB
 		function hexc(colorval) {
 		    var parts = colorval.match(/^rgb\((\d+),\s*(\d+),\s*(\d+)\)$/);
 		    delete(parts[0]);
@@ -559,29 +567,70 @@
 		    }
 		    return '#' + parts.join('');
 		}
-		
+
+		/*****************************/
+		/* JQuery - ready() function */
+		/*****************************/
 		$(document).ready(function() {
-			// Window stuff
+			
+			/* Initalize */
+			// Initalize some variables
 			var $windowHeight = $(window).height();
 			var $windowWidth = $(window).width();
-			// We give it this style attribute value so that sidebar is loaded smoothly
+
+			// Always start website at the top and activate about
+			$('body').scrollTop(1);
+			$('body').stop().animate({scrollTop:0},1000);
+
+			// Initalize Mobile
 			if ($windowWidth <= 480) {
+				// Sidebar smoothing work around
 				$('.container-fluid').css('right','0px');
+
+			// Initalize Tablet
+			} else if ($windowWidth > 480 && $windowWidth <=768) {
+
+			// Initalize Desktop
+			} else {
 			}
 
-			// Yes we do this again if window is resized...
+			// Initalize skill bar colors
+			$(".progress .bar").each(function() {
+				var value = parseInt($(this).data("strength"))/100;
+				var r = Math.floor(200*(1-(value*value*value)));
+				var g = 100;
+				var b = Math.floor(200*(value*value*value));
+				var color = hexc('rgb('+r+','+g+','+b+')');
+				var color2 = hexc('rgb('+(r+55)+','+g+','+(b+55)+')');
+				$(this).css('background-image','linear-gradient(to top,'+color+','+color2+')');
+				$(this).css('background-color',color);
+			}); 
+			/* Initalize end */
+
+
+
+
+
+			// Window resize handler
 			$(window).resize(function() {
 				$windowHeight = $(window).height();
 				$windowWidth = $(window).width();
+
+				// Mobile
 				if ($windowWidth <= 480) {
 					$('.container-fluid').css('right','0px');
+
+				// Tablet
 				} else if ($windowWidth > 480 && $windowWidth <=768) {
 					$('.container-fluid').removeAttr('style');
+
+				// Desktop
 				} else {
 					$('body').css('background-color','#fff');
 				}
 			});
 
+			// Window scroll handler
 			$(window).scroll(function() {
 				var scrollMiddle = $(window).scrollTop() + ($windowHeight/3);
 				$('div[class^="hero-unit"]').each(function() {
@@ -615,11 +664,9 @@
 				});
 			});
 
-			$('body').stop().animate({scrollTop:0},1000);
-
 			// Click event bindings
 			$(function() {
-				// Sidebar toggle
+				// Sidebar button toggle
 				$('.sidebar.button').click(function(event){
 					var sidebar = $('#sidebar');
 					if (sidebar.css('right') != '0px') {
@@ -640,8 +687,8 @@
 					$('.container-fluid').css('right','0px');
 				});
 
-				// Local links
-				$('.button a').click(function(event){
+				// Auto scroll to link
+				$('a').click(function(event){
 					if ( $($(this).attr('href')).exists() ) {
 						event.preventDefault();
 						var value = $($(this).attr('href')).offset().top;
@@ -653,7 +700,7 @@
 					}
 				});
 
-				// Skill expand
+				// Skill list toggle
 				$(".skill-list").click(function(event) {
 					event.preventDefault();
 					// Toggle height to 0
@@ -679,25 +726,15 @@
 					}
 				});
 
-				// Skill collapse
+				// Skill list collapse
 				$(".skill-expand").click(function(event) {
 					event.preventDefault();
 					$(this).css("height","0px").children(".progress").each(function(){
-						$(this).children(":first").css("width","0px").animate(4000);
+						$(this).children(":first").css("width","0px");
 					});;
 				});
-			});
+			}); /* Document.ready() end */
 
-			$(".progress .bar").each(function() {
-				var value = parseInt($(this).data("strength"))/100;
-				var r = Math.floor(200*(1-(value*value*value)));
-				var g = 75;
-				var b = Math.floor(200*(value*value*value));
-				var color = hexc('rgb('+r+','+g+','+b+')');
-				var color2 = hexc('rgb('+(r+55)+','+g+','+(b+55)+')');
-				$(this).css('background-image','linear-gradient(to top,'+color+','+color2+')');
-				$(this).css('background-color',color);
-			});
    		}); 
 	</script>
 </html>
