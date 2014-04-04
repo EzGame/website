@@ -693,8 +693,8 @@
 						event.preventDefault();
 						var value = $($(this).attr('href')).offset().top;
 						$('body').stop().animate({
-							scrollTop:value - 40
-						}, 1000);
+							scrollTop:value
+						});
 					} else { 
 						console.log('doesnt exist');
 					}

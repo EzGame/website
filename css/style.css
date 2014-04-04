@@ -460,19 +460,26 @@ body {
 			background-color: rgba(42,42,42,0.85);
 			color: #fff;
 		}
+			#sidebar .table tbody tr{
+
+			}
 			#sidebar .table thead tr th{
 				line-height: 20px;
 				margin: 0px;
 				padding: 0px;
+				border-top: none;
 			}
 			#sidebar .table tbody tr td{
 				padding-left: 20px;
-				padding-top: 4px;
-				padding-bottom: 4px;
-				font-size: 12px;
+				padding-top: 5px;
+				padding-bottom: 5px;
+				
+				border-top: none;
 			}
 				#sidebar .table tbody tr td a{
 					color: #2ec5ee;
+					font-size: 12px;
+					font-weight: 900 !important;
 				}
 				#sidebar .table tbody tr td a:hover{
 					text-decoration: none;
