@@ -250,16 +250,34 @@ body {
 		}
 
 #projects {
+	height: 480px;
 }
-	.item{
-		min-height: 400px;
-		font-size: 40px;
-		line-height: 400px;
-		text-align: center;
+	.project-item {
+		position: relative; 
+		margin-top: 20px;
+		margin-bottom: 10px;
+		width: 100%;
+		height: 100px;
+		border-radius: 10px;
+		overflow: hidden;
 	}
+		.project-item-text { 
+			position: absolute;
+			top: 40px;
+			margin: 0px;
+			width: 100%;
+			color: white; 
+			font-family: 'Raleway', sans-serif;
+			letter-spacing: -1px;  
+			background: rgb(0, 0, 0); /* fallback color */
+			background: rgba(0, 0, 0, 0.7);
+			padding: 10px; 
+		}
 
-#hobbies {
+#experiments {
+	height: 480px;
 }
+
 
 
 
@@ -416,7 +434,7 @@ body {
 			text-align: center;
 		}
 
-	#hobbies {
+	#experiments {
 	}
 }
 
@@ -621,7 +639,29 @@ body {
 
 	#projects {
 	}
+		.project-item {
+			position: relative; 
+			margin: 0px;
+			padding-top: 20px;
+			padding-bottom: 10px;
+			width: 100%;
+			height: 100px;
+			overflow: hidden;
+			border-radius: 0px;
+		}
+			.project-item-text { 
+				position: absolute;
+				top: 60px;
+				margin-top: 10px;
+				width: 100%;
+				color: white; 
+				font-family: 'Raleway', sans-serif;
+				letter-spacing: -1px;  
+				background: rgb(0, 0, 0); /* fallback color */
+				background: rgba(0, 0, 0, 0.7);
+				padding: 10px; 
+			}
 
-	#hobbies {
+	#experiments {
 	}
 }

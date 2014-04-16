@@ -15,10 +15,6 @@
 		<link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
 		<link href="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/css/bootstrap.min.css" rel="stylesheet">
 		<link href="css/style.css" rel="stylesheet" media="screen">
-
-		<!-- Javascripts -->
-		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-		<script src="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
 	</head>
 	<body>
 		<!-- SIDEBAR -->
@@ -41,7 +37,7 @@
 						<a href="#projects"><i class="fa fa-code"></i> Projects</a>
 					</td></tr>
 					<tr><td>
-						<a href="#hobbies"><i class="fa fa-heart"></i> Hobbies</a>
+						<a href="#experiments"><i class="fa fa-flask"></i> Experiments</a>
 					</td></tr>
 				</tbody>
 				<thead><tr><th>
@@ -79,7 +75,7 @@
 					<a href="#">David Z.</a>
 				</div>
 				<div class="button">
-					<a href="#hobbies"><i class="fa fa-heart"></i></a>
+					<a href="#experiments"><i class="fa fa-flask"></i></a>
 				</div>
 				<div class="button">
 					<a href="#projects"><i class="fa fa-code"></i></a>
@@ -447,9 +443,48 @@
 
 					<div class="hero-unit" id="projects">
 						<h1 style="text-align:center">PROJECTS</h1>
-						<br/>
-						<!-- Normal -->
 						<div class="normal">
+							<div class="project-item">
+								<a href="https://github.com/Waisze/spaceapps" onmouseover="projmore(this)" onmouseout="projless(this)">
+									<img style="width:100%;margin-top:-50px;" src="img/spaceapps2014_a.png" alt=""/>
+									<h3 class="project-item-text">Pilot a Satellite<br />Oculus Rift, Unity3D, Blender</h3>
+								</a>
+							</div>
+							<div class="project-item">
+								<a href="https://github.com/vincentleest/ECE496-Computer-Vision-Sorter" onmouseover="projmore(this)" onmouseout="projless(this)">
+									<img style="width:100%;margin-top:-30px;" src="img/legosorter_a.png" alt=""/>
+									<h3 class="project-item-text">Lego Sorter<br />C++, OpenCV, KNN</h3>
+								</a>
+							</div>
+							<div class="project-item">
+								<a onmouseover="projmore(this)" onmouseout="projless(this)">
+									<img style="width:100%;margin-top:-40px;" src="img/singwithme_a.png" alt=""/>
+									<h3 class="project-item-text">SingWithMe<br />Under construction :)</h3>
+								</a>
+							</div>
+						</div>
+						<div class="mobile">
+							<div class="project-item">
+								<a href="https://github.com/Waisze/spaceapps">
+									<img style="width:100%" src="img/spaceapps2014_a.png" alt=""/>
+									<h3 class="project-item-text">Pilot a Satellite</h3>
+								</a>
+							</div>
+							<div class="project-item">
+								<a href="https://github.com/vincentleest/ECE496-Computer-Vision-Sorter">
+									<img style="width:100%" src="img/legosorter_a.png" alt=""/>
+									<h3 class="project-item-text">Lego Sorter</h3>
+								</a>
+							</div>
+							<div class="project-item">
+								<a>
+									<img style="width:100%" src="img/singwithme_a.png" alt=""/>
+									<h3 class="project-item-text">Under Construction :)</h3>
+								</a>
+							</div>
+						</div>
+						<!-- Normal -->
+						<!-- <div class="normal">
 							<div id="myCarousel" class="carousel slide">
 								<div class="carousel-inner">
 									<div class="item active">
@@ -466,10 +501,10 @@
 								<a class="left carousel-control" href="#myCarousel" data-slide="prev">‹</a>
 								<a class="right carousel-control" href="#myCarousel" data-slide="next">›</a>
 							</div>
-						</div>
+						</div> -->
 
 						<!-- Mobile -->
-						<div class="mobile">
+						<!-- <div class="mobile">
 							<div id="myCarousel-mobile" class="carousel slide">
 								<ol class="carousel-indicators">
 									<li data-target="#myCarousel-mobile" data-slide-to="0"></li>
@@ -482,7 +517,7 @@
 									<div class="active item">...</div>
 								</div>
 							</div>
-						</div>
+						</div> -->
 					</div>		
 
 
@@ -495,53 +530,29 @@
 
 
 
-					<div class="hero-unit" id="hobbies">
-						<h1 style="text-align:center">HOBBIES</h1>
-						<h3>U<h3>
-						<h3>N<h3>
-						<h3>D<h3>
-						<h3>E<h3>
-						<h3>R<h3>
+					<div class="hero-unit" id="experiments">
+						<h1 style="text-align:center">EXPERIMENTS</h1>
 						<br/>
 						<br/>
 						<br/>
-						<h3>Construction :)<h3>
-					</div>		
+						<h1 style="text-align:center"> Coming soon! </h1>
+					</div>
+
 				</div> <!-- SPAN12 -->
 			</div> <!-- ROW-FLUID -->
 		</div> <!-- CONTAINER-FLUID -->
 	</body>
 
+	<!-- Javascripts -->
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+	<!--<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>-->
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
 
 	<script>
 		/*******************************************/
 		/* Javascript - load(); similar to ready() */
 		/*******************************************/
 		window.addEventListener('load', function(){
-			// myCarousel-mobile swipes
-			// We use javascript over jQuery as there is little from the jQuery mobile
-			// framework that we actually need outside of touch handling, where as
-			// the Javascript library is much simplier...
-			var touchStart;
-			var carousel = document.getElementById("myCarousel-mobile");
-
-			// Touch start
-			carousel.addEventListener("touchstart", function(event) {
-				if (event.touches.length > 1) return;
-				touchStart = event.touches[0].clientX;
-			});
-
-			// Touch end
-			carousel.addEventListener("touchend", function(event) {				
-				if (event.touches.length > 0) return;
-				var dx = event.changedTouches[0].clientX - touchStart;
-				if (Math.abs(dx) > 10) {
-					// Use jQuery, not sure how to do in JS
-					var $jQCarousel = $('#myCarousel-mobile');
-					(dx > 0) ? $jQCarousel.carousel('prev') : $jQCarousel.carousel('next');
-				}
-			});
-
 			// Keyboard events
 			// document.addEventListener("keydown", function(event) {
 			// 	console.log("key press fired");
@@ -566,6 +577,16 @@
 		        if (parts[i].length == 1) parts[i] = '0' + parts[i];
 		    }
 		    return '#' + parts.join('');
+		}
+
+		// Displays extra information on an onmouseover event
+		function projmore(target) {
+			// .project-item-text is children[1]
+			target.children[1].style.top = '0px';
+		}
+
+		function projless(target) {
+			target.children[1].style.top = '40px';	
 		}
 
 		/*****************************/
@@ -647,7 +668,7 @@
 							color = '#79BD9A';
 						else if ($(this).attr('id') == 'projects')
 							color = '#3B8686';
-						else if ($(this).attr('id') == 'hobbies')
+						else if ($(this).attr('id') == 'experiments')
 							color = '#0B486B';
 						$(this).css('background-color', color);
 						if ( $windowWidth <= 768 ) {
@@ -663,6 +684,27 @@
 					}
 				});
 			});
+
+			// // Carousel touch handler
+			// var touchStart;
+			// var carousel = document.getElementById("myCarousel-mobile");
+
+			// // Touch start
+			// carousel.addEventListener("touchstart", function(event) {
+			// 	if (event.touches.length > 1) return;
+			// 	touchStart = event.touches[0].clientX;
+			// });
+
+			// // Touch end
+			// carousel.addEventListener("touchend", function(event) {				
+			// 	if (event.touches.length > 0) return;
+			// 	var dx = event.changedTouches[0].clientX - touchStart;
+			// 	if (Math.abs(dx) > 10) {
+			// 		// Use jQuery, not sure how to do in JS
+			// 		var $jQCarousel = $('#myCarousel-mobile');
+			// 		(dx > 0) ? $jQCarousel.carousel('prev') : $jQCarousel.carousel('next');
+			// 	}
+			// });
 
 			// Click event bindings
 			$(function() {
