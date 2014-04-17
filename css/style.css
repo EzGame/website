@@ -277,6 +277,9 @@ body {
 #experiments {
 	height: 480px;
 }
+	canvas #worldmap {
+		width:100%;
+	}
 
 
 

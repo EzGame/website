@@ -184,6 +184,9 @@ $(document).ready(function() {
 			if ( $($(this).attr('href')).exists() ) {
 				event.preventDefault();
 				var value = $($(this).attr('href')).offset().top;
+				if ( $windowWidth > 480 ) {
+					value = value - 80;
+				}
 				$('body').stop().animate({
 					scrollTop:value
 				});
