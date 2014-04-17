@@ -15,7 +15,20 @@
 		<link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
 		<link href="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/css/bootstrap.min.css" rel="stylesheet">
 		<link href="css/style.css" rel="stylesheet" media="screen">
-		<script language="JavaScript" src="http://www.geoplugin.net/javascript.gp" type="text/javascript"></script>
+
+		<!-- JS -->
+		<!-- JQuery -->
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+		<!-- Angular JS 
+		<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
+		-->
+		<!-- Twitter bootstrap -->
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+		<!-- Geoplugin @ http://www.geoplugin.net/ -->
+		<script src="http://www.geoplugin.net/javascript.gp" type="text/javascript"></script>
+		<!-- World Map by Jon Combe @ http://joncom.be/code/excanvas-world-map/#google -->
+		<script src="js/worldmap.js"></script>
+		<script src="js/website.js"></script>
 	</head>
 	<body>
 		<!-- SIDEBAR -->
@@ -160,7 +173,6 @@
 							technologies. At night, I turn into a code ninja working on 
 							the next big idea. This website will hopefully let you get 
 							to know me a little better :)
-							GEOPLUGIN- Och1KMU2eXej6x0KZpdoZqcriOgPZv
 							</p>
 						</div>
 					</div>
@@ -485,6 +497,36 @@
 								</a>
 							</div>
 						</div>
+					</div>		
+
+
+
+
+
+
+
+
+
+
+
+					<div class="hero-unit" id="experiments">
+						<h1 style="text-align:center">EXPERIMENTS</h1>
+						<br/>
+						<h3 style="text-align:center">Visitor Tracker</h3>
+						<canvas id="worldmap">
+						<script>
+							var oSettings = {};
+							oSettings.id = "worldmap";
+							oSettings.bgcolor = "rgba(0,0,0,0)"
+							oSettings.fgcolor = "#1A1A1A"
+							oSettings.bordercolor = "rgba(0,0,0,0)";
+							var target = getCode(geoplugin_countryName()).toLowerCase();
+							if (target != "??") {
+								oSettings.detail = {};
+								oSettings.detail[target] = "#CFF09E";
+							}
+							WorldMap(oSettings);
+						</script>
 
 						<!-- Normal -->
 						<!-- <div class="normal">
@@ -521,39 +563,14 @@
 								</div>
 							</div>
 						</div> -->
-					</div>		
-
-
-
-
-
-
-
-
-
-
-
-					<div class="hero-unit" id="experiments">
-						<h1 style="text-align:center">EXPERIMENTS</h1>
-						  <script language="Javascript"> 
-							document.write("Welcome to our visitors from "+geoplugin_city()+", "+geoplugin_countryName()); 
-						  </script>
-						<br/>
-						<br/>
-						<br/>
-						<h1 style="text-align:center"> Coming soon! </h1>
 					</div>
 
+					<div style="display:none">
+						This product includes GeoLite data created by MaxMind, available from
+  						<a href="http://www.maxmind.com">http://www.maxmind.com</a>.
+  					</div>
 				</div> <!-- SPAN12 -->
 			</div> <!-- ROW-FLUID -->
 		</div> <!-- CONTAINER-FLUID -->
 	</body>
-
-	<!-- Javascripts -->
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-	<!--<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>-->
-	<script src="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
-	<script src="js/website.js"></script>
-
-	
 </html>
