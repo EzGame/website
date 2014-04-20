@@ -157,7 +157,7 @@
 							Software Developer & Designer
 							<!-- Visionary -->
 						</h3>
-						<a href="David_Zhang_Resume.pdf">
+						<a href="resume.pdf">
 							<div class="about-resume">
 								<font color="#000000">VIEW RESUME</font>
 							</div>
@@ -459,6 +459,10 @@
 						<h1 style="text-align:center">PROJECTS</h1>
 						<div class="normal">
 							<div class="project-item">
+								<!-- TODO: Implement this section using div instead of a,
+									 This is so that we can create an expanding overlay when the
+									 div is pressed on with onmousedown(). On the overlay, add link
+									 to github page -->
 								<a href="https://github.com/Waisze/spaceapps" onmouseover="projmore(this)" onmouseout="projless(this)">
 									<img style="width:100%;margin-top:-50px;" src="img/spaceapps2014_a.png" alt=""/>
 									<h3 class="project-item-text">Pilot a Satellite<br />Oculus Rift, Unity3D, Blender</h3>
@@ -513,7 +517,7 @@
 						<h1 style="text-align:center">EXPERIMENTS</h1>
 						<br/>
 						<h3 style="text-align:center">Visitor Tracker</h3>
-						<canvas id="worldmap">
+						<canvas id="worldmap" style="width:100%">
 						<script>
 							var oSettings = {};
 							oSettings.id = "worldmap";
