@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<style>
+* {
+  font-family: 'Poiret One', cursive;
+  box-sizing: border-box;
+  transition: 0.5s;
+}
+
+.hide {
+  display: none;
+}
+
+.budget-container {
+  margin: 10px;
+}
+  #budget-slide {
+    -webkit-appearance: none;
+    height: 1px;
+    width: 300px;
+    margin: 0px;
+    border: none;
+    background: #CCC;
+    outline: none;
+  }
+  #budget-slide::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    border: none;
+    height: 15px;
+    width: 15px;
+    /*border-radius: 50%;*/
+    background: #FFD700;
+    margin-top: -1px;
+  }
+
+  #budget-text {
+    border: none;
+    height: 30px;
+    width: 120px;
+    outline: none;
+    font-size: 20px;
+  }
+
+.product-columns {
+  -webkit-column-width: 300px;
+  -moz-column-width: 320px;
+  column-width: 320px;
+}
+  .product-grid {
+    min-width: 320px;
+    min-height: 400px;
+  }
+
+  .product-grid-image {
+    max-width: 100%;
+    max-height: 100%;
+  }
+</style>
+<html>
+  <head>
+    <title>LaTaminator Demo</title>
+    <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Poiret+One' type='text/css'>
+    <link rel="stylesheet" href="animate.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+
+  </head>
+  <body onload="init()">
+    <h1 style="text-align:center;">La Petite Carotte</h1>
+    <div class="budget-container">
+      Tell us your budget <br/>
+      <input id="budget-slide" type="range" min="0" max="250" value="100" oninput="updateValue(this.value)" onchange="updateData(this.value)"/>
+      <input id="budget-text" type="value" min="0" max="250" value="100" oninput="updateValue(this.value)" onchange="updateData(this.value)"/>
+    </div>
+
+    <div class="product-columns"></div>
+  </body>
+</html>
+<script type="text/javascript" src="data.js"></script>
+<script type="text/javascript" src="script.js"></script>
