@@ -71,16 +71,30 @@ html {
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
   </head>
   <body onload="init()" onclick="moveTo('demo')">
-    <img src="imgs_home/city2.jpg" id="bg" align="middle">
+    <img id="bg" align="middle">
     <h1 class="header">La Petite Carotte</h1>
-    <h3 class="header2">#YourDevIsSick<h3>
+    <h3 class="header2"><h3>
   </body>
 </html>
 <script>
+window['hashtags'] = [
+  "BudgetBeauty",
+  "DimeDesigner",
+  "YourDevIsSick",
+  "LaPetiteBeof",
+  "HaveYouNoticedTheseAreRandom?",
+  "AWholeNewWorld",
+  "DailyHashTag"
+]
 var bool = false;
 var number = 1 + Math.floor(Math.random() * 5);
 function init() {
+  $('.header2').text("#"+window['hashtags']
+    [Math.floor(Math.random()*window['hashtags'].length)]
+    );
+
   $('#bg').addClass('animated fadeIn');
+
   window.setInterval(function(){
     if (bool) {
       $('#bg').attr('src','imgs_home/city'+number+".jpg");
@@ -93,14 +107,6 @@ function init() {
     }
     bool = !bool;
   }, 10000);
-  // $('html').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
-  //   $(this).removeClass('animated fadeIn');
-  // });
-  // $('html').animate({
-  //   backgroundColor: 'rgba(0,0,0,1)'
-  // }, 5000, function() {
-  //   // Animation complete.
-  // });
 };
 
 function moveTo(location) {
@@ -108,8 +114,5 @@ function moveTo(location) {
   $('#bg').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
     window.location = location + ".html";
   });
-  // $('html').animate({
-  //   backgroundColor: 'rgba(0,0,0,0)'
-  // }, 5000,
 }
 </script>
