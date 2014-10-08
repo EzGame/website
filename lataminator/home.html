@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<style>
+* {
+  font-family: 'Poiret One', cursive;
+  box-sizing: border-box;
+  transition: 1s;
+}
+
+html, body {
+  margin: 0;
+  height: 100%;
+  overflow: hidden;
+}
+
+html {
+  -webkit-animation-duration: 5s;
+  -moz-animation-duration: 5s;
+  -o-animation-duration: 5s;
+  animation-duration: 5s;
+}
+
+.container {
+  height: 100%;
+  width: 100%;
+  text-decoration: none;
+}
+
+.header {
+  position:absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 4em;
+  color: #fff
+}
+
+.header2 {
+  position:absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2.5em;
+  color: #fff
+}
+
+#bg {
+  position: absolute;
+  top: -9999px;
+  bottom: -9999px;
+  left: -9999px;
+  right: -9999px;
+  -webkit-transform: scale(0.5); /* Saf3.1+, Chrome */
+   -moz-transform: scale(0.5); /* FF3.5+ */
+    -ms-transform: scale(0.5); /* IE9 */
+     -o-transform: scale(0.5); /* Opera 10.5+ */
+        transform: scale(0.5);
+  margin: auto;
+  vertical-align: middle;
+  opacity: 0;
+}
+#bg:hover {
+  cursor: pointer;
+}
+
+</style>
+<html>
+  <head>
+    <title>LaTaminator Demo</title>
+    <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Poiret+One' type='text/css'>
+    <link rel="stylesheet" href="animate.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+  </head>
+  <body onload="init()" onclick="moveTo('demo')">
+    <img src="imgs_home/city2.jpg" id="bg" align="middle">
+    <h1 class="header">La Petite Carotte</h1>
+    <h3 class="header2">#YourDevIsSick<h3>
+  </body>
+</html>
+<script>
+var bool = false;
+var number = 1 + Math.floor(Math.random() * 5);
+function init() {
+  $('#bg').addClass('animated fadeIn');
+  window.setInterval(function(){
+    if (bool) {
+      $('#bg').attr('src','imgs_home/city'+number+".jpg");
+      number++;
+      if (number > 5) {
+        number = 1;
+      }
+    } else {
+      $('#bg').attr('src','imgs_home/village'+number+".jpg");
+    }
+    bool = !bool;
+  }, 10000);
+  // $('html').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
+  //   $(this).removeClass('animated fadeIn');
+  // });
+  // $('html').animate({
+  //   backgroundColor: 'rgba(0,0,0,1)'
+  // }, 5000, function() {
+  //   // Animation complete.
+  // });
+};
+
+function moveTo(location) {
+  $('#bg').addClass('animated fadeOut');
+  $('#bg').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
+    window.location = location + ".html";
+  });
+  // $('html').animate({
+  //   backgroundColor: 'rgba(0,0,0,0)'
+  // }, 5000,
+}
+</script>

@@ -47,19 +47,27 @@ function updateValue(value) {
 };
 
 function updateData(value) {
+  var timer_counter = 0;
   $('.product-columns').find('.product-grid').each(function(){
     if ($(this).data('price') > value) {
-      $(this).addClass('animated fadeOut');
-      $(this).one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
-        $(this).addClass('hide');
-        $(this).removeClass('animated fadeOut');
-      });
+      $(this).toggle();
+      // setTimeout(function(){
+      //   $(this).addClass('hide');
+      // },timer_counter * 500);
+      // timer_counter++;
+      // $(this).addClass('animated fadeOut');
+      // $(this).one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
+      //   $(this).addClass('hide');
+      //   $(this).removeClass('animated fadeOut');
+      // });
     } else if ($(this).hasClass('hide')) {
-      $(this).removeClass('hide');
-      $(this).addClass('animated fadeIn');
-      $(this).one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
-        $(this).removeClass('animated fadeIn');
-      });
+      $(this).toggle();
+      // $(this).removeClass('hide');
+      // $(this).removeClass('hide');
+      // $(this).addClass('animated fadeIn');
+      // $(this).one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
+      //   $(this).removeClass('animated fadeIn');
+      // });
     }
   });
 }
