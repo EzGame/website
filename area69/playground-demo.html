@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="icon"  type="image/png" href="img/favicon.png">
+    <title>?</title>
+    <!-- Meta tags -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <!-- CSS -->
+    <link href='http://fonts.googleapis.com/css?family=Droid+Sans|Raleway:100|Permanent+Marker' rel='stylesheet' type='text/css'/>
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet"/>
+    <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css" rel="stylesheet"/>
+    <!-- JS -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
+    <style>
+      html, body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+      }
+
+      textarea {
+        border: none;
+        display: block;
+      }
+
+      a {
+        -webkit-user-select: none; /* webkit (safari, chrome) browsers */
+        -moz-user-select: none; /* mozilla browsers */
+        -khtml-user-select: none; /* webkit (konqueror) browsers */
+        -ms-user-select: none; /* IE10+ */
+      }
+
+      .ui-resizable-handle {
+        background: #f5dc58;
+        border: 1px solid #FFF;
+        z-index: 2;
+      }
+      .ui-resizable-n,
+      .ui-resizable-s {
+        height: 3px;
+      }
+      .ui-resizable-e,
+      .ui-resizable-w {
+        width: 3px;
+      }
+      .ui-resizable-ne,
+      .ui-resizable-sw,
+      .ui-resizable-nw {
+        width: 5px;
+        height: 5px;
+      }
+      .ui-resizable-se {
+        width: 5px;
+        height: 5px;
+        right: -5px;
+        bottom: -5px;
+      }
+      .ui-resizable-helper {
+        border: 1px dotted gray;
+      }
+
+
+      #sidebar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 25%;
+        height: 100%;
+        background: #444;
+      }
+
+      .container {
+        padding: 20px;
+      }
+
+      .input-text {
+        display: block;
+        color: #CCC;
+      }
+
+      .text {
+        background: #888;
+        width: 100px;
+        height: 25px;
+        font-size: 15px;
+        border: none;
+        outline-width: 0;
+        margin-bottom: 10px;
+        padding-left: 10px;
+      }
+
+      /* XXX DZ -
+       * Literally the best css button generator:
+       * http://www.bestcssbuttongenerator.com/
+       */
+      .button {
+        background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #b8e356), color-stop(1, #a5cc52));
+        background:-moz-linear-gradient(top, #b8e356 5%, #a5cc52 100%);
+        background:-webkit-linear-gradient(top, #b8e356 5%, #a5cc52 100%);
+        background:-o-linear-gradient(top, #b8e356 5%, #a5cc52 100%);
+        background:-ms-linear-gradient(top, #b8e356 5%, #a5cc52 100%);
+        background:linear-gradient(to bottom, #b8e356 5%, #a5cc52 100%);
+        filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#b8e356', endColorstr='#a5cc52',GradientType=0);
+        background-color:#b8e356;
+        display:inline-block;
+        cursor:pointer;
+        color:#444;
+        font-family:arial;
+        font-size:15px;
+        font-weight:bold;
+        padding:6px 15px;
+        margin: 2.5px;
+        text-decoration:none;
+      }
+      .button:hover {
+        background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #a5cc52), color-stop(1, #b8e356));
+        background:-moz-linear-gradient(top, #a5cc52 5%, #b8e356 100%);
+        background:-webkit-linear-gradient(top, #a5cc52 5%, #b8e356 100%);
+        background:-o-linear-gradient(top, #a5cc52 5%, #b8e356 100%);
+        background:-ms-linear-gradient(top, #a5cc52 5%, #b8e356 100%);
+        background:linear-gradient(to bottom, #a5cc52 5%, #b8e356 100%);
+        filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#a5cc52', endColorstr='#b8e356',GradientType=0);
+        background-color:#a5cc52;
+      }
+      .button:active {
+        position:relative;
+        top:1px;
+      }
+
+
+      #playground {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 75%;
+        min-height: 100%;
+      }
+
+      #test {
+        width: 100px;
+        height: 100px;
+        background: #F00;
+        position: absolute;
+        top: 300px;
+        left: 300px;
+      }
+      .selected {
+        background: linear-gradient(
+            rgba(0, 0, 0, 0.3),
+            rgba(0, 0, 0, 0.3)
+        );
+      }
+
+      #menu {
+        margin: 0;
+        padding: 0;
+        position: absolute;
+      }
+      #menu > li {
+        display: block;
+        background: #444;
+        box-shadow: 0px 0px 9px rgba(0,0,0,0.15);
+        padding: 5px 20px;
+        color: #CCC;
+        list-style: none;
+        cursor: pointer;
+      }
+
+
+
+    </style>
+  </head>
+  <body oncontextmenu="return false;">
+    <div id="sidebar">
+      <div class="container">
+        <div class="input-text"> Width:
+          <input class="text" id="width" type="text" placeholder="400px">
+        </div>
+        <div class="input-text"> Height:
+          <input class="text" id="height" type="text" placeholder="600px">
+        </div>
+        <div class="input-text"> BG Color:
+          <input class="text" id="bgcolor" type="text" placeholder="#FFF">
+        </div>
+        <a class="button" id="new">New</a>
+        <a class="button" id="open">Open</a>
+        <a class="button" id="save">Save</a>
+
+        <hr>
+        <div id="toolbar" style="#display:none">
+          <a class="button" id="create-div">&ltdiv&gt</a>
+          <a class="button" id="create-1">&ltsome&gt</a>
+          <a class="button" id="create-2">&lttag&gt</a>
+          <a class="button" id="create-3">&ltsome&gt</a>
+          <a class="button" id="create-4">&lttag&gt</a>
+          <a class="button" id="create-5">&ltsome&gt</a>
+          <a class="button" id="create-6">&lttag&gt</a>
+        </div>
+      </div>
+
+    </div>
+    <div id="playground">
+    </div>
+
+    <!-- Double click menu -->
+    <ul id="menu" style="display:none">
+      <li id="css-menu">Edit CSS
+        <div class="submenu" style="display:none">
+          <textarea id="css-text" cols="25" rows="18"></textarea>
+          <a id="css-save" class="button">Save</a>
+        </div>
+      </li>
+      <li>function 2</li>
+      <li>function 3</li>
+      <li>function 4</li>
+      <li>function 5</li>
+    </ul>
+
+    <!-- dialog -->
+    <!-- <div id="css-dialog" title="Edit Css">
+      <textarea id="css-text" rows="20" cols="30"></textarea>
+    </div> -->
+  </body>
+</html>
+<script>
+/* GLOBAL VARIABLES */
+  $menu = $('#menu');
+  $menuState = {
+    divCaller: null,
+    actionCaller: null,
+    subMenuShown: false,
+  };
+
+
+
+/* GLOBAL FUNCTIONS */
+  // Menu open event, attach to new doms on .dblclick()
+  $openMenu = function( e ) {
+    console.log(e.which)
+    e.preventDefault();
+    if (e.which == 3) {
+      $menuState.divCaller = $(this);
+      $menuState.divCaller.addClass('selected');
+
+      $menu.css({
+        left: e.pageX,
+        top: e.pageY
+      });
+      $menu.toggle();
+    } else {
+      if ($menuState.divCaller) {
+        $menuState.divCaller.removeClass('selected');
+      }
+      $menu.hide();
+    }
+  };
+
+
+
+/* MISC */
+  // Deprecated for CSS change
+  // $('a').dblclick(function(e) {
+  //   e.preventDefault();
+  // });
+
+
+
+/* MENU FUNCTIONS */
+  // Edit CSS
+  $('#css-menu').click(function() {
+    if (!$menuState.subMenuShown) {
+      $menuState.subMenuShown = true;
+      $menuState.actionCaller = $(this);
+      $menuState.actionCaller.children().first().toggle();
+      $('#css-text').val($menuState.divCaller.attr("style"));
+    }
+  });
+  $('#css-save').click(function( event ) {
+    event.stopPropagation();
+    $menuState.divCaller.removeClass('selected');
+    $menuState.divCaller.attr("style",$('#css-text').val());
+    $menuState.actionCaller.children().first().toggle();
+
+    $menuState.divCaller = null;
+    $menuState.actionCaller = null;
+    $menuState.subMenuShown = false;
+    $menu.toggle();
+  });
+
+
+
+/* SIDE BAR FUNCTIONS */
+  // New app
+  $('#new').click(function() {
+    if ( $('#app').length != 0 ) {
+      console.log("app exists")
+      return;
+    }
+    $width = ($('#width').val()) ? $('#width').val() : "400px";
+    $height = ($('#height').val()) ? $('#height').val() : "600px";
+    $bgcolor = ($('#bgcolor').val()) ? $('#bgcolor').val() : "#FFF";
+    $newApp = $("<div id=\"app\"></div>");
+    $newApp.css({
+      "width": $width,
+      "height": $height,
+      "background-color": $bgcolor,
+      "left": "20px",
+      "top": "20px"
+    });
+
+    $newApp.draggable();
+    $newApp.resizable({
+      aspectRatio: false,
+      handles: 'n, w, e, s, ne, se, sw, nw'
+    });
+    $newApp.mousedown($openMenu);
+    $('#playground').append($newApp);
+
+
+  });
+</script>
