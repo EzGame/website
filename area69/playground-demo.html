@@ -7,9 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta charset="utf-8">
     <!-- CSS -->
-    <link href='http://fonts.googleapis.com/css?family=Droid+Sans|Raleway:100|Permanent+Marker' rel='stylesheet' type='text/css'/>
     <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet"/>
     <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css" rel="stylesheet"/>
+    <link href="animate.css" rel="stylesheet"/>
     <!-- JS -->
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
@@ -24,7 +24,7 @@
         display: block;
       }
 
-      a {
+      * {
         -webkit-user-select: none; /* webkit (safari, chrome) browsers */
         -moz-user-select: none; /* mozilla browsers */
         -khtml-user-select: none; /* webkit (konqueror) browsers */
@@ -38,26 +38,30 @@
       }
       .ui-resizable-n,
       .ui-resizable-s {
-        height: 3px;
+        height: 5px;
+        opacity: 0;
       }
       .ui-resizable-e,
       .ui-resizable-w {
-        width: 3px;
+        width: 5px;
+        opacity: 0;
       }
       .ui-resizable-ne,
       .ui-resizable-sw,
       .ui-resizable-nw {
-        width: 5px;
-        height: 5px;
+        width: 8px;
+        height: 8px;
+        opacity: 0;
       }
       .ui-resizable-se {
-        width: 5px;
-        height: 5px;
-        right: -5px;
-        bottom: -5px;
+        width: 8px;
+        height: 8px;
+        right: -8px;
+        bottom: -8px;
+        opacity: 0;
       }
       .ui-resizable-helper {
-        border: 1px dotted gray;
+        border: 2px solid black;
       }
 
 
@@ -72,7 +76,29 @@
 
       .container {
         padding: 20px;
+        height: 100%;
       }
+
+      #about {
+        position: absolute;
+        bottom: 20px;
+        font-size: 30px;
+        width: 80%;
+        display:flex;
+        justify-content:space-between;
+      }
+      #about>a {
+        color: #CCC;
+        transition: 0.5s;
+      }
+      #about>a:visited {
+        color: #CCC;
+      }
+      #about>a:hover {
+        color: #b8e356;
+      }
+
+
 
       .input-text {
         display: block;
@@ -128,23 +154,15 @@
         top:1px;
       }
 
-
       #playground {
         position: fixed;
         top: 0;
         right: 0;
         width: 75%;
         min-height: 100%;
+        background-color: #222;
       }
 
-      #test {
-        width: 100px;
-        height: 100px;
-        background: #F00;
-        position: absolute;
-        top: 300px;
-        left: 300px;
-      }
       .selected {
         background: linear-gradient(
             rgba(0, 0, 0, 0.3),
@@ -167,8 +185,10 @@
         cursor: pointer;
       }
 
-
-
+      .submenu>* {
+        display: block;
+        margin: 0 0 5px 0;
+      }
     </style>
   </head>
   <body oncontextmenu="return false;">
@@ -188,7 +208,7 @@
         <a class="button" id="save">Save</a>
 
         <hr>
-        <div id="toolbar" style="#display:none">
+        <div id="toolbar" style="display:none">
           <a class="button" id="create-div">&ltdiv&gt</a>
           <a class="button" id="create-1">&ltsome&gt</a>
           <a class="button" id="create-2">&lttag&gt</a>
@@ -197,7 +217,24 @@
           <a class="button" id="create-5">&ltsome&gt</a>
           <a class="button" id="create-6">&lttag&gt</a>
         </div>
+
+        <div id="about">
+
+          <a href="mailto:zyq.david@gmail.com">
+            <i class="fa fa-envelope"></i>
+          </a>
+          <a href="http://github.ezdz.io">
+            <i class="fa fa-github-square"></i>
+          </a>
+          <a href="http://linkedin.ezdz.io">
+            <i class="fa fa-linkedin-square"></i>
+          </a>
+          <a href="http://blog.ezdz.io">
+            <i class="fa fa-rss-square"></i>
+          </a>
+        </div>
       </div>
+    </div> <!-- SIDEBAR -->
 
     </div>
     <div id="playground">
@@ -211,7 +248,105 @@
           <a id="css-save" class="button">Save</a>
         </div>
       </li>
-      <li>function 2</li>
+      <li id="anim-menu">Add Animation
+        <div class="submenu" style="display:none;">
+          <select id="anim-type"">
+            <optgroup label="Attention Seekers">
+              <option value="bounce">bounce</option>
+              <option value="flash">flash</option>
+              <option value="pulse">pulse</option>
+              <option value="rubberBand">rubberBand</option>
+              <option value="shake">shake</option>
+              <option value="swing">swing</option>
+              <option value="tada">tada</option>
+              <option value="wobble">wobble</option>
+            </optgroup>
+            <optgroup label="Bouncing Entrances">
+              <option value="bounceIn">bounceIn</option>
+              <option value="bounceInDown">bounceInDown</option>
+              <option value="bounceInLeft">bounceInLeft</option>
+              <option value="bounceInRight">bounceInRight</option>
+              <option value="bounceInUp">bounceInUp</option>
+            </optgroup>
+            <optgroup label="Bouncing Exits">
+              <option value="bounceOut">bounceOut</option>
+              <option value="bounceOutDown">bounceOutDown</option>
+              <option value="bounceOutLeft">bounceOutLeft</option>
+              <option value="bounceOutRight">bounceOutRight</option>
+              <option value="bounceOutUp">bounceOutUp</option>
+            </optgroup>
+            <optgroup label="Fading Entrances">
+              <option value="fadeIn">fadeIn</option>
+              <option value="fadeInDown">fadeInDown</option>
+              <option value="fadeInDownBig">fadeInDownBig</option>
+              <option value="fadeInLeft">fadeInLeft</option>
+              <option value="fadeInLeftBig">fadeInLeftBig</option>
+              <option value="fadeInRight">fadeInRight</option>
+              <option value="fadeInRightBig">fadeInRightBig</option>
+              <option value="fadeInUp">fadeInUp</option>
+              <option value="fadeInUpBig">fadeInUpBig</option>
+            </optgroup>
+            <optgroup label="Fading Exits">
+              <option value="fadeOut">fadeOut</option>
+              <option value="fadeOutDown">fadeOutDown</option>
+              <option value="fadeOutDownBig">fadeOutDownBig</option>
+              <option value="fadeOutLeft">fadeOutLeft</option>
+              <option value="fadeOutLeftBig">fadeOutLeftBig</option>
+              <option value="fadeOutRight">fadeOutRight</option>
+              <option value="fadeOutRightBig">fadeOutRightBig</option>
+              <option value="fadeOutUp">fadeOutUp</option>
+              <option value="fadeOutUpBig">fadeOutUpBig</option>
+            </optgroup>
+            <optgroup label="Flippers">
+              <option value="flip">flip</option>
+              <option value="flipInX">flipInX</option>
+              <option value="flipInY">flipInY</option>
+              <option value="flipOutX">flipOutX</option>
+              <option value="flipOutY">flipOutY</option>
+            </optgroup>
+            <optgroup label="Lightspeed">
+              <option value="lightSpeedIn">lightSpeedIn</option>
+              <option value="lightSpeedOut">lightSpeedOut</option>
+            </optgroup>
+            <optgroup label="Rotating Entrances">
+              <option value="rotateIn">rotateIn</option>
+              <option value="rotateInDownLeft">rotateInDownLeft</option>
+              <option value="rotateInDownRight">rotateInDownRight</option>
+              <option value="rotateInUpLeft">rotateInUpLeft</option>
+              <option value="rotateInUpRight">rotateInUpRight</option>
+            </optgroup>
+            <optgroup label="Rotating Exits">
+              <option value="rotateOut">rotateOut</option>
+              <option value="rotateOutDownLeft">rotateOutDownLeft</option>
+              <option value="rotateOutDownRight">rotateOutDownRight</option>
+              <option value="rotateOutUpLeft">rotateOutUpLeft</option>
+              <option value="rotateOutUpRight">rotateOutUpRight</option>
+            </optgroup>
+            <optgroup label="Specials">
+              <option value="hinge">hinge</option>
+              <option value="rollIn">rollIn</option>
+              <option value="rollOut">rollOut</option>
+            </optgroup>
+            <optgroup label="Zoom Entrances">
+              <option value="zoomIn">zoomIn</option>
+              <option value="zoomInDown">zoomInDown</option>
+              <option value="zoomInLeft">zoomInLeft</option>
+              <option value="zoomInRight">zoomInRight</option>
+              <option value="zoomInUp">zoomInUp</option>
+            </optgroup>
+            <optgroup label="Zoom Exits">
+              <option value="zoomOut">zoomOut</option>
+              <option value="zoomOutDown">zoomOutDown</option>
+              <option value="zoomOutLeft">zoomOutLeft</option>
+              <option value="zoomOutRight">zoomOutRight</option>
+              <option value="zoomOutUp">zoomOutUp</option>
+            </optgroup>
+          </select>
+          Duration: <input type="text" name="duration" placeholder="1">
+          Iteration: <input type="text" name="iteration" placeholder="-1">
+          <a id="anim-save" class="button">Save</a>
+        </div>
+      </li>
       <li>function 3</li>
       <li>function 4</li>
       <li>function 5</li>
@@ -231,21 +366,30 @@
     actionCaller: null,
     subMenuShown: false,
   };
+  $currentApp = null;
 
 
 
 /* GLOBAL FUNCTIONS */
+  function vendorCSS(style, value) {
+    $str = "-webkit-" + style + ":" + value + ";";
+    $str += "-moz-" + style + ":" + value + ";";
+    $str += "-ms-" + style + ":" + value + ";";
+    $str += "-o-" + style + ":" + value + ";";
+    $str += "" + style + ":" + value + ";";
+    return $str
+  };
   // Menu open event, attach to new doms on .dblclick()
-  $openMenu = function( e ) {
-    console.log(e.which)
-    e.preventDefault();
-    if (e.which == 3) {
+  $openMenu = function( event ) {
+    event.stopPropagation();
+    event.preventDefault();
+    if (event.which == 3) {
       $menuState.divCaller = $(this);
       $menuState.divCaller.addClass('selected');
 
       $menu.css({
-        left: e.pageX,
-        top: e.pageY
+          left: event.pageX,
+          top: event.pageY
       });
       $menu.toggle();
     } else {
@@ -273,13 +417,14 @@
       $menuState.subMenuShown = true;
       $menuState.actionCaller = $(this);
       $menuState.actionCaller.children().first().toggle();
-      $('#css-text').val($menuState.divCaller.attr("style"));
+      $('#css-text').val($menuState.divCaller.attr("style").split(";").join(";\n"));
     }
   });
+  // Save CSS
   $('#css-save').click(function( event ) {
     event.stopPropagation();
     $menuState.divCaller.removeClass('selected');
-    $menuState.divCaller.attr("style",$('#css-text').val());
+    $menuState.divCaller.attr("style",$('#css-text').val().split(";\n").join(";"));
     $menuState.actionCaller.children().first().toggle();
 
     $menuState.divCaller = null;
@@ -287,6 +432,38 @@
     $menuState.subMenuShown = false;
     $menu.toggle();
   });
+  // Add animation
+  $('#anim-menu').click(function() {
+    if (!$menuState.subMenuShown) {
+      $menuState.subMenuShown = true;
+      $menuState.actionCaller = $(this);
+      $menuState.actionCaller.children().first().toggle();
+
+      $menuState.actionCaller.children().find('input[name="duration"]');
+      $menuState.actionCaller.children().find('input[name="iteration"]');
+    }
+  });
+  // Save animation
+  $('#anim-save').click(function( event ) {
+    event.stopPropagation();
+    $menuState.divCaller.removeClass('selected');
+    $duration = $menuState.actionCaller.children().find('input[name="duration"]').val();
+    $iteration = $menuState.actionCaller.children().find('input[name="iteration"]').val();
+    $cssString = vendorCSS('animation-duration',$duration + "s") + vendorCSS('animation-iteration-count',$iteration);
+    $menuState.divCaller.css($menuState.divCaller.attr('style') + $cssString);
+    if ($menuState.divCaller.hasClass("animated")) {
+      $lastClass = $menuState.divCaller.attr("class").split(" ").pop();
+      $menuState.divCaller.removeClass($lastClass);
+    }
+    $menuState.divCaller.addClass("animated " + $('#anim-type').val());
+    $menuState.actionCaller.children().first().toggle();
+
+    $menuState.divCaller = null;
+    $menuState.actionCaller = null;
+    $menuState.subMenuShown = false;
+    $menu.toggle();
+  });
+  // Save animation
 
 
 
@@ -294,7 +471,8 @@
   // New app
   $('#new').click(function() {
     if ( $('#app').length != 0 ) {
-      console.log("app exists")
+      console.log("app exists");
+      alert("You have an active app!");
       return;
     }
     $width = ($('#width').val()) ? $('#width').val() : "400px";
@@ -302,21 +480,52 @@
     $bgcolor = ($('#bgcolor').val()) ? $('#bgcolor').val() : "#FFF";
     $newApp = $("<div id=\"app\"></div>");
     $newApp.css({
-      "width": $width,
-      "height": $height,
-      "background-color": $bgcolor,
-      "left": "20px",
-      "top": "20px"
+        "width": $width,
+        "height": $height,
+        "background-color": $bgcolor,
+        "left": "20px",
+        "top": "20px"
     });
 
-    $newApp.draggable();
+    $newApp.draggable({
+        containment: $('#playground')
+    });
     $newApp.resizable({
-      aspectRatio: false,
-      handles: 'n, w, e, s, ne, se, sw, nw'
+        aspectRatio: false,
+        handles: 'n, w, e, s, ne, se, sw, nw',
+        containment: $('#playground')
     });
     $newApp.mousedown($openMenu);
+    $currentApp = $newApp;
+    $('#toolbar').show();
     $('#playground').append($newApp);
-
-
   });
+
+
+
+/* TOOL BAR FUNCTIONS */
+  // create div
+  $('#create-div').click(function() {
+    if ($currentApp.length != 0) {
+      $newDiv = $("<div class=\"div\"></div>");
+      $newDiv.css({
+          "width": "100px",
+          "height": "100px",
+          "background-color": "#DDD",
+          "position": "#relative"
+      });
+      $newDiv.draggable({
+          containment: $currentApp
+      });
+      $newDiv.resizable({
+          aspectRatio: false,
+          handles: 'n, w, e, s, ne, se, sw, nw',
+          containment: $currentApp
+      });
+      $newDiv.mousedown($openMenu);
+      $currentApp.append($newDiv);
+    }
+  });
+
+
 </script>
