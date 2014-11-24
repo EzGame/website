@@ -1,0 +1,667 @@
+/* STATIC DESIGN */
+* {
+	transition: 0.5s;
+	font-family: 'Droid Sans', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'Permanent Marker', cursive;
+}
+
+a {
+	font-family: 'Raleway', sans-serif;
+}
+
+hr {
+	margin: 20px auto;
+	max-width: 568px;
+	border-color: #CCCCCC;
+}
+
+/* HEADER */
+header {
+	background-color: #1a1a1a;
+	height:40px;
+	width:100%;
+	position:fixed;
+	top:0;
+	z-index: 1000;
+}
+	.header-container {
+		min-width: 320px;
+		max-width: 1024px;
+		margin: 0 auto;
+	}
+		.name a{
+			color: #CCCCCC;
+			text-align:left;
+			line-height: 40px;
+			font-size: 16px;
+			margin-left:10px;
+			max-width: 100px;
+			float:left;
+		}
+			.name a:hover {
+				color: #2ec5ee;
+				text-decoration: none;
+			}
+			.name a:visited {
+				color: #CCCCCC;
+				text-decoration: none;
+			}
+
+/* FOOTER */
+footer {
+	background-color: #1a1a1a;
+	height:40px;
+	width:100%;
+	position:fixed;
+	bottom:0;
+	z-index: 1000;
+}
+	.footer-container {
+		min-width: 320px;
+		max-width: 1024px;
+		margin: 0 auto;
+	}
+		.contact a{
+			color: #CCCCCC;
+			text-align:left;
+			line-height: 40px;
+			font-size: 16px;
+			margin-left:10px;
+			float:left;
+		}
+			.contact a:hover {
+				color: #2ec5ee;
+				text-decoration: none;
+			}
+			.contact a:visited {
+				color: #CCCCCC;
+				text-decoration: none;
+			}
+
+/* BUTTONS (FONT AWESOME) */
+.button {
+	width: 40px;
+	height: 40px;
+	margin-left: 10px;
+	margin-right: 10px;
+	float: right;
+	line-height: 40px;
+	font-size: 30px;
+	color: #2ec5ee !important;
+}
+	.button a:hover {
+		color: #2ec5ee !important;
+	}
+	.button a:visited {
+		color: #2ec5ee !important;
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+/* RESPONSIVE WEB DESIGN */
+.normal {
+	display:block;
+}
+
+.mobile {
+	display:none;
+}
+
+body {
+	min-width: 320px;
+	min-height: 320px;
+	height: 100%;
+	width: 100%;
+}
+
+.container-fluid {
+	width: 100%;
+	margin: 60px auto 60px auto;
+	padding: 0px;
+}
+
+.hero-unit {
+	max-width: 568px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/* Section ID's */
+#about {
+}
+	.about-description {
+		margin: auto;
+		max-width: 400px;
+		text-align: left;
+	}
+	.about-resume {
+		margin: auto;
+		text-align: center;
+		background-color: #cecece;
+		border-radius: 5px;
+		width: 140px;
+		height: 30px;
+	}
+
+#education {
+}
+	.uoft-container {
+		text-align: center;
+		padding: auto;
+	}
+		.uoft-image {
+			max-width: 150px;
+			border-radius: 10px;
+			margin-left: 10px;
+			padding:auto;
+		}
+
+	.uoft-description {
+		text-align: right;
+	}
+		.uoft-text{
+			list-style: none;
+			display: block;
+		}
+
+#resume {
+}
+	.skill-header{
+		margin: 15px 0 15px 0;
+		text-align: center;
+	}
+		.skill-list{
+			height:30px;
+			text-align: center;
+			list-style: none;
+		}
+			.skill-list:hover{
+				color:#ff0000;
+			}
+		.skill-expand{
+			margin:auto;
+			padding:0px;
+			height:0px;
+
+			width:80%;
+			overflow: hidden;
+		}
+			.progress{
+				height: 20px;
+				margin: 0px;
+				background-color: #1a1a1a !important;
+				background-image: linear-gradient(to bottom,#101010,#1a1a1a);
+			}
+				.progress .bar {
+					text-align: left;
+					padding-left: 10px;
+					line-height: 20px;
+					border-radius: 4px;
+				}
+
+
+	.ibm-container {
+		overflow: visible;	    
+		background-image: url(../img/ibm-db2-cubes.png);
+		background-position: center;
+	}
+	.ibm-container-fade{
+		width: inherit;
+		height: 100px;
+		position: inherit;
+		background: -webkit-linear-gradient(left, 
+			rgba(121,189,154,1) 0%, 
+			rgba(0,0,0,0) 30%,
+			rgba(0,0,0,0) 60%,
+			rgba(121,189,154,1) 100%
+    	);
+	}
+		.ibm-image {
+			width:100px;
+			height:100px;
+			text-align: right;
+		}
+		.ibm-duration {
+			padding: 20px 0px;
+			padding-left: 20px;
+			text-align: left;
+			color:white;
+		}
+	.ibm-description {
+		text-align: center;
+	}
+		.ibm-text{
+			font-size: 18px;
+			line-height: 20px;
+			margin-top: 10px;
+			height: 20px;
+		}
+
+#projects {
+	height: 480px;
+}
+	.project-item {
+		position: relative; 
+		margin-top: 20px;
+		margin-bottom: 10px;
+		width: 100%;
+		height: 100px;
+		border-radius: 10px;
+		overflow: hidden;
+	}
+		.project-item-text { 
+			position: absolute;
+			top: 40px;
+			margin: 0px;
+			width: 100%;
+			color: white; 
+			font-family: 'Raleway', sans-serif;
+			letter-spacing: -1px;  
+			background: rgb(0, 0, 0); /* fallback color */
+			background: rgba(0, 0, 0, 0.7);
+			padding: 10px; 
+		}
+
+#experiments {
+	height: 480px;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* Tablet mode */
+@media (max-width: 768px) {
+	/* not done */
+
+	body {
+		min-width: 320px;
+		background-color: #1a1a1a;
+		margin:0px 0px 0px 0px;
+	}
+
+	h1 {
+		font-size: 2em !important;
+	}
+
+	.container-fluid {
+		position: static;
+		margin: 40px 0px 40px 0px;	
+		padding: 0px;
+	}
+
+	.hero-unit {
+		max-width: 468px;
+		margin: 10px auto 20px auto;
+		padding: 20px 20px 20px 20px;
+	}
+
+	/* Section ID's */
+	#about {
+	}
+		.about-description {
+			margin: auto;
+			max-width: 400px;
+			text-align: left;
+		}
+		.about-resume {
+			margin: auto;
+			text-align: center;
+			background-color: #cecece;
+			border-radius: 5px;
+			width: 140px;
+			height: 30px;
+		}
+
+	#education {
+	}
+		.uoft-container {
+			text-align: center;
+			padding: auto;
+		}
+			.uoft-image {
+				max-width: 150px;
+				border-radius: 10px;
+				margin-left: 10px;
+				padding:auto;
+			}
+
+		.uoft-description {
+			text-align: right;
+		}
+			.uoft-text{
+				list-style: none;
+				display: block;
+			}
+
+	#resume {
+	}
+		.skill-header{
+			margin: 15px 0 15px 0;
+			text-align: center;
+		}
+			.skill-list{
+				height:30px;
+				text-align: center;
+				list-style: none;
+			}
+				.skill-list:hover{
+					color:#ff0000;
+				}
+			.skill-expand{
+				margin:auto;
+				padding:0px;
+				height:0px;
+
+				width:80%;
+				overflow: hidden;
+			}
+				.progress{
+					height: 20px;
+					margin: 0px;
+					background-color: #1a1a1a !important;
+					background-image: linear-gradient(to bottom,#101010,#1a1a1a);
+				}
+					.progress .bar {
+						text-align: left;
+						padding-left: 10px;
+						line-height: 20px;
+						border-radius: 4px;
+					}
+
+
+		.ibm-container {
+			overflow: visible;	    
+			background-image: url(../img/ibm-db2-cubes.png);
+			background-position: center;
+		}
+		.ibm-container-fade{
+			width: inherit;
+			height: 100px;
+			position: inherit;
+			background: -webkit-linear-gradient(left, 
+				rgba(121,189,154,1) 0%, 
+				rgba(0,0,0,0) 30%,
+				rgba(0,0,0,0) 60%,
+				rgba(121,189,154,1) 100%
+	    	);
+		}
+			.ibm-image {
+				width:100px;
+				height:100px;
+				text-align: right;
+			}
+			.ibm-duration {
+				padding: 20px 0px;
+				padding-left: 20px;
+				text-align: left;
+				color:white;
+			}
+		.ibm-description {
+			text-align: center;
+		}
+			.ibm-text{
+				font-size: 18px;
+				line-height: 20px;
+				margin-top: 10px;
+				height: 20px;
+			}
+
+	#projects {
+	}
+		.item{
+			min-height: 400px;
+			font-size: 40px;
+			line-height: 400px;
+			text-align: center;
+		}
+
+	#experiments {
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+/* Mobile mode */
+@media (max-width: 480px) {
+	/* Mobile only */
+	.sidebar {
+		position: fixed;
+		top: 20px;
+		right: 10px;
+		z-index: 100;
+	}
+		.sidebar.button {
+			font-size: 40px;
+			color:#1a1a1a;
+		}
+
+	#sidebar {
+		position: fixed;
+		height: 100%;
+		width: 200px;
+		top: 0px;
+		background-color: rgba(26,26,26,0.95);
+		overflow: hidden;
+		z-index: 1000;
+	}
+		#sidebar .table {
+
+		}
+		#sidebar .table thead {
+			background-color: rgba(42,42,42,0.85);
+			color: #fff;
+		}
+			#sidebar .table tbody tr{
+
+			}
+			#sidebar .table thead tr th{
+				line-height: 20px;
+				margin: 0px;
+				padding: 0px;
+				border-top: none;
+			}
+			#sidebar .table tbody tr td{
+				padding-left: 20px;
+				padding-top: 5px;
+				padding-bottom: 5px;
+				
+				border-top: none;
+			}
+				#sidebar .table tbody tr td a{
+					color: #2ec5ee;
+					font-size: 12px;
+					font-weight: 900 !important;
+				}
+				#sidebar .table tbody tr td a:hover{
+					text-decoration: none;
+				}
+
+	/* Normal */
+	.normal {
+		display:none;
+	}
+
+	.mobile {
+		display:block;
+	}
+
+	body {
+		min-width: 320px;
+		background-color: #1a1a1a;
+		margin:0 0 0 0;
+	}
+
+	h1 {
+		font-size: 2em !important;
+	}
+
+	.container-fluid {
+		position: absolute;	
+		margin: -10px 0px 0px 0px;
+		padding: 0px;
+	}
+
+	.hero-unit {
+		margin: 0px;
+		padding: 20px 20px 20px 20px;
+		border-radius: 0px
+	}
+
+	/* IDs */
+	#about {
+	}
+		.about-description {
+		}
+		.about-resume {
+		}
+
+	#education {
+	}
+		.uoft-container {
+			text-align: center;
+	        vertical-align: middle;
+			margin: auto;
+		}
+			.uoft-image {
+				max-width: 150px;
+				border-radius: 10px;
+				margin-left: 10px;
+				padding:auto;
+			}
+
+		.uoft-description {
+			text-align: center;
+		}
+			.uoft-text{
+				list-style: none;
+				display: block;
+			}
+
+	#resume {
+	}
+		.skill-header{
+			margin: 15px 0 15px 0;
+			text-align: center;
+		}
+			.skill-list{
+				height:30px;
+				text-align: center;
+				list-style: none;
+			}
+				.skill-list:hover{
+					color:#ff0000;
+				}
+			.skill-expand{
+				margin:auto;
+				padding:0px;
+				height:0px;
+
+				width:80%;
+				overflow: hidden;
+			}
+				.progress{
+					height: 20px;
+					margin: 0px;
+					background-color: #1a1a1a !important;
+					background-image: linear-gradient(to bottom,#101010,#1a1a1a);
+				}
+					.progress .bar {
+						text-align: left;
+						padding-left: 10px;
+						line-height: 20px;
+						border-radius: 4px;
+					}
+
+
+		.ibm-container {
+			overflow: visible;	    
+			background-image: url(../img/ibm-db2-cubes.png);
+			background-position: center;
+		}
+		.ibm-container-fade{
+			width: inherit;
+			height: 100px;
+			position: inherit;
+			background: -webkit-linear-gradient(left, 
+				rgba(121,189,154,1) 0%, 
+				rgba(121,189,154,0.2) 30%,
+				rgba(121,189,154,0.2) 60%,
+				rgba(121,189,154,1) 100%
+	    	);
+		}
+			.ibm-image {
+				width:100px;
+				height:100px;
+				text-align: right;
+			}
+			.ibm-duration {
+				padding: 20px 0px;
+				padding-left: 20px;
+				text-align: left;
+				color:white;
+			}
+		.ibm-description {
+			text-align: center;
+		}
+			.ibm-text{
+				font-size: 15px;
+				line-height: 15px;
+				margin-top: 10px;
+				height: 30px;
+			}
+
+	#projects {
+	}
+		.project-item {
+			position: relative; 
+			margin: 0px;
+			padding-top: 20px;
+			padding-bottom: 10px;
+			width: 100%;
+			height: 100px;
+			overflow: hidden;
+			border-radius: 0px;
+		}
+			.project-item-text { 
+				position: absolute;
+				top: 60px;
+				margin-top: 10px;
+				width: 100%;
+				color: white; 
+				font-family: 'Raleway', sans-serif;
+				letter-spacing: -1px;  
+				background: rgb(0, 0, 0); /* fallback color */
+				background: rgba(0, 0, 0, 0.7);
+				padding: 10px; 
+			}
+
+	#experiments {
+	}
+}
