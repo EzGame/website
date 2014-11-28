@@ -5,70 +5,106 @@
     <link rel="stylesheet" href="css/animate.min.css">
     <link rel="stylesheet" href="css/style.css">
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-    <script src="js/script.js"></script>
+    <!--<script src="js/jquery.min.js"></script>-->
+    <script src="js/jquery.backstretch.min.js"></script>
     <script src="js/transit.min.js"></script>
+    <script src="js/script.js"></script>
+    <meta name="viewport" content="width=device-width" />
   </head>
   <body>
+
     <div id="header-container" class="desktop tablet">
       <div id="header">
-        <a id="header-link" href="#">ABOUT ME</a>
-        <a id="header-link" href="#">WORK</a>
-        <a id="header-link" href="#">PROJECTS</a>
-        <a id="header-link" href="#">CONTACT</a>
+        <a class="header-link" href="#content1">ABOUT ME</a>
+        <a class="header-link" href="#content2">WORK</a>
+        <a class="header-link" href="#content3">PROJECTS</a>
+        <a class="header-link" href="#footer">CONTACT</a>
       </div>
       <div id="do-cover">
-        <div id="dodecahedron">
-          <div class="face face1"><img src="img/penta50w.png"/></div>
-          <div class="face face2"><img src="img/penta50w.png"/></div>
-          <div class="face face3"><img src="img/penta50w.png"/></div>
-          <div class="face face4"><img src="img/penta50w.png"/></div>
-          <div class="face face5"><img src="img/penta50w.png"/></div>
-          <div class="face face6"><img src="img/penta50w.png"/></div>
-          <div class="face face7"><img src="img/penta50w.png"/></div>
-          <div class="face face8"><img src="img/penta50w.png"/></div>
-          <div class="face face9"><img src="img/penta50w.png"/></div>
-          <div class="face face10"><img src="img/penta50w.png"/></div>
-          <div class="face face11"><img src="img/penta50w.png"/></div>
-          <div class="face face12"><img src="img/penta50w.png"/></div>
+        <div id="dodecahedron" class="no-select">
+          <div class="face face1 no-select"><img src="img/penta50w.png"/></div>
+          <div class="face face2 no-select"><img src="img/penta50w.png"/></div>
+          <div class="face face3 no-select"><img src="img/penta50w.png"/></div>
+          <div class="face face4 no-select"><img src="img/penta50w.png"/></div>
+          <div class="face face5 no-select"><img src="img/penta50w.png"/></div>
+          <div class="face face6 no-select"><img src="img/penta50w.png"/></div>
+          <div class="face face7 no-select"><img src="img/penta50w.png"/></div>
+          <div class="face face8 no-select"><img src="img/penta50w.png"/></div>
+          <div class="face face9 no-select"><img src="img/penta50w.png"/></div>
+          <div class="face face10 no-select"><img src="img/penta50w.png"/></div>
+          <div class="face face11 no-select"><img src="img/penta50w.png"/></div>
+          <div class="face face12 no-select"><img src="img/penta50w.png"/></div>
         </div>
       </div>
     </div>
     <div id="header-container-mobile" class="mobile">
       <i class="fa fa-bars"></i>
     </div>
-    <div id="img1" class="full-page">
+
+
+    <div id="page1" class="full-page">
       <div id="intro" class="boxed-text no-select">EZDZ.io</div>
     </div>
-    <div class="full-page page-gradient">
+
+
+    <div id="content1" class="full-page page-gradient">
       <div class="content-container">
         <div id="intro-pic">
           <img src="img/me.jpg"/>
         </div>
         <div id="intro-text">
           My name is David Zhang.<br/>
-          I'm a Toronto based web/rails/whatever-is-needed developer. I enjoy everything tech related from startups to gadgets. Currently, I'm passonate about creating powerful applications wrapped in <strong>crisp</strong> designs.<br/>
-          During my spare time, I like to play with my Camera, day-dreaming about traveling the world, and playing some DotA. I love urban exploration, adventure, and discovering all my city has to offer.
+          I'm a Toronto based web/rails/whatever-is-needed developer.
+          I enjoy everything tech related from startups to gadgets.
+          I'm passonate very about creating powerful applications
+          wrapped in <strong>crisp</strong> designs.<br/>
+          During my spare time, I like to play with my Camera, day-dreaming
+          about traveling the world, and playing some DotA. I love
+          urban exploration, adventure, and discovering all my city has to offer.
+          <br/>
+          <div id="intro-resume" onclick="document.location.href = 'resume.pdf';">
+            Resume
+          </div>
         </div>
+
       </div>
     </div>
-    <div id="img2" class="full-page">
+
+
+    <div id="page2" class="full-page">
       <div id="work" class="boxed-text no-select">WORK</div>
     </div>
-    <div class="full-page page-gradient">
+
+
+    <div id="content2" class="full-page page-gradient">
+      <div class="content-container">
+        Some stuff about my work at wishabi + IBM
+      </div>
     </div>
-    <div id="img3" class="full-page">
+
+
+    <div id="page3" class="full-page">
       <div id="projects" class="boxed-text no-select">PROJECTS</div>
     </div>
-    <div class="full-page page-gradient">
-    </div>
-    <div id="footer" class="full-page">
-      Some text about footers + contact
 
-      TODO:
-      Logo
-      Content - about
-      Content - timeline
-      Content - project showcase
+
+    <div id="content3" class="full-page page-gradient">
+      <div class="content-container">
+        Some stuff about my projects
+      </div>
+    </div>
+
+
+    <div id="footer" class="full-page">
+      <div class="content-container">
+        Some text about footers + contact
+
+        TODO:
+        Logo
+        Content - about
+        Content - timeline
+        Content - project showcase
+      </div>
     </div>
   </body>
 </html>

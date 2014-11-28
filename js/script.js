@@ -2,22 +2,38 @@
 $(document).ready(function () {
   $winWidth = $(window).width();
   $winHeight = $(window).height();
-  $('.full-page').height($winHeight + 50);
+  $doDrag = true;
+  $('#page1').backstretch('img/mac.jpg');
+  $('#page2').backstretch('img/mac2.jpg');
+  $('#page3').backstretch('img/cafe.jpg');
 
   /* Quirky animations */
   $('#intro').mouseenter(function() {
     $(this).transition({
       rotateX:'360deg'
     }, 1000, 'easeInSine');
-  }).mouseout(function() {
+  }).mouseleave(function() {
     $(this).transition({
       rotateX:'0deg'
     }, 1000, 'easeOutSine');
   });
 
+  $('a.header-link').click(function() {
+    // scroll to id
+  });
+
+  $('#do-cover').mousedown(function() {
+    console.log("HI");
+  }).mouseover(function() {
+    console.log("yep");
+  }).mouseup(function() {
+    console.log("BYE");
+  });
+
   (function loop(){
     $('#dodecahedron').transition({
       rotateY:'+=10deg',
+      rotateX:'+=1deg',
     }, 1000, 'linear', loop);
   })();
 });
