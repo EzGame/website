@@ -213,7 +213,7 @@ body {
 
 
 	.ibm-container {
-		overflow: visible;	    
+		overflow: visible;
 		background-image: url(../img/ibm-db2-cubes.png);
 		background-position: center;
 	}
@@ -221,8 +221,8 @@ body {
 		width: inherit;
 		height: 100px;
 		position: inherit;
-		background: -webkit-linear-gradient(left, 
-			rgba(121,189,154,1) 0%, 
+		background: -webkit-linear-gradient(left,
+			rgba(121,189,154,1) 0%,
 			rgba(0,0,0,0) 30%,
 			rgba(0,0,0,0) 60%,
 			rgba(121,189,154,1) 100%
@@ -253,7 +253,7 @@ body {
 	height: 480px;
 }
 	.project-item {
-		position: relative; 
+		position: relative;
 		margin-top: 20px;
 		margin-bottom: 10px;
 		width: 100%;
@@ -261,17 +261,17 @@ body {
 		border-radius: 10px;
 		overflow: hidden;
 	}
-		.project-item-text { 
+		.project-item-text {
 			position: absolute;
 			top: 40px;
 			margin: 0px;
 			width: 100%;
-			color: white; 
+			color: white;
 			font-family: 'Raleway', sans-serif;
-			letter-spacing: -1px;  
+			letter-spacing: -1px;
 			background: rgb(0, 0, 0); /* fallback color */
 			background: rgba(0, 0, 0, 0.7);
-			padding: 10px; 
+			padding: 10px;
 		}
 
 #experiments {
@@ -304,7 +304,7 @@ body {
 
 	.container-fluid {
 		position: static;
-		margin: 40px 0px 40px 0px;	
+		margin: 40px 0px 40px 0px;
 		padding: 0px;
 	}
 
@@ -389,7 +389,7 @@ body {
 
 
 		.ibm-container {
-			overflow: visible;	    
+			overflow: visible;
 			background-image: url(../img/ibm-db2-cubes.png);
 			background-position: center;
 		}
@@ -397,8 +397,8 @@ body {
 			width: inherit;
 			height: 100px;
 			position: inherit;
-			background: -webkit-linear-gradient(left, 
-				rgba(121,189,154,1) 0%, 
+			background: -webkit-linear-gradient(left,
+				rgba(121,189,154,1) 0%,
 				rgba(0,0,0,0) 30%,
 				rgba(0,0,0,0) 60%,
 				rgba(121,189,154,1) 100%
@@ -491,7 +491,7 @@ body {
 				padding-left: 20px;
 				padding-top: 5px;
 				padding-bottom: 5px;
-				
+
 				border-top: none;
 			}
 				#sidebar .table tbody tr td a{
@@ -523,7 +523,7 @@ body {
 	}
 
 	.container-fluid {
-		position: absolute;	
+		position: absolute;
 		margin: -10px 0px 0px 0px;
 		padding: 0px;
 	}
@@ -601,7 +601,7 @@ body {
 
 
 		.ibm-container {
-			overflow: visible;	    
+			overflow: visible;
 			background-image: url(../img/ibm-db2-cubes.png);
 			background-position: center;
 		}
@@ -609,8 +609,8 @@ body {
 			width: inherit;
 			height: 100px;
 			position: inherit;
-			background: -webkit-linear-gradient(left, 
-				rgba(121,189,154,1) 0%, 
+			background: -webkit-linear-gradient(left,
+				rgba(121,189,154,1) 0%,
 				rgba(121,189,154,0.2) 30%,
 				rgba(121,189,154,0.2) 60%,
 				rgba(121,189,154,1) 100%
@@ -640,7 +640,7 @@ body {
 	#projects {
 	}
 		.project-item {
-			position: relative; 
+			position: relative;
 			margin: 0px;
 			padding-top: 20px;
 			padding-bottom: 10px;
@@ -649,17 +649,17 @@ body {
 			overflow: hidden;
 			border-radius: 0px;
 		}
-			.project-item-text { 
+			.project-item-text {
 				position: absolute;
 				top: 60px;
 				margin-top: 10px;
 				width: 100%;
-				color: white; 
+				color: white;
 				font-family: 'Raleway', sans-serif;
-				letter-spacing: -1px;  
+				letter-spacing: -1px;
 				background: rgb(0, 0, 0); /* fallback color */
 				background: rgba(0, 0, 0, 0.7);
-				padding: 10px; 
+				padding: 10px;
 			}
 
 	#experiments {

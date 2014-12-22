@@ -139,13 +139,52 @@ h1, h2, h3, h4, h5, h6, strong {
   width: 330px;
 }
 
-.project {
-}
-
-.project-img {
-}
-
 .project-hover {
+  position: absolute;
+  top: 0px;
+  left: 70%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+
+  font-size: 2em;
+  line-height: 2.5em;
+  transition: left 0.5s;
+}
+.project-hover-title {
+  position: relative;
+  float: left;
+  padding-left: 10px;
+  padding-top: 10px;
+  width: 30%;
+  height: 100%;
+  font-weight: bold;
+  font-family: 'Montserrat', sans-serif;
+  line-height: 0.75em;
+}
+.project-hover-subtitle {
+  position: absolute;
+  list-style-type: none;
+  font-size: 0.75em;
+  line-height: 0.75em;
+  padding-left: 0px;
+  bottom: 10px;
+  margin: 0;
+}
+.project-hover-subtitle li {
+  padding-top: 10px;
+}
+.project-hover-body {
+  position: relative;
+  float: right;
+  padding-top: 10px;
+  padding-right: 10px;
+  width: 65%;
+  height: 100%;
+  font-size: 0.75em;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: lighter;
+  line-height: 1em;
 }
 
 .footer-container {

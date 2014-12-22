@@ -23,28 +23,45 @@ $(document).ready(function() {
     // look for which row to put it in
     $rowIndex = ($rowWidthHolder[0] > $rowWidthHolder[1]) ? 1 : 0;
     $rowIndexHeight = $rowIndex * $rowHeight;
-    $(elem).find('img').css({
+
+    // set img css
+    $(elem).find('.project-img').css({
       'height': $rowHeight,
       'width': 'auto',
     });
+
+    // set parent css
     $(elem).css({
       'position':'absolute',
       'margin-top': $rowIndexHeight,
-      'margin-left': $rowWidthHolder[$rowIndex]
+      'margin-left': $rowWidthHolder[$rowIndex],
+      'overflow': 'hidden'
+    });
+    $(elem).hover(function() {
+      $(this).find('.project-hover').css('left','0%');
+    }, function() {
+      $(this).find('.project-hover').css('left','70%');
     });
     $rowWidthHolder[$rowIndex] += $(elem).width();
 
+    // set hover css
+    $(elem).find('.project-hover').css({
+      'width': $(elem).width(),
+    });
+
     // if this is last time, try and find furthest point and add padding
     if(index == $ezMasonry.find('.project').length - 1) {
-      if ($rowWidthHolder[$rowIndex] > $rowWidthHolder[Math.abs($rowIndex-1)]){
-        $(elem).css({
-          'padding-right': $ezMasonry.css('padding')
-        });
-      } else {
-        $(elem).prev('.project').css({
-          'padding-right': $ezMasonry.css('padding')
-        });
-      }
+      $padding = $('<div></div>');
+      $paddingLeftPos = Math.max($rowWidthHolder[0], $rowWidthHolder[1]);
+      $paddingTopPos =
+          ($paddingLeftPos == $rowWidthHolder[0]) ? 0 : $rowHeight;
+      $padding.css({
+        'width': $ezMasonry.css('padding'),
+        'height': $rowHeight,
+        'margin-top': $paddingTopPos,
+        'margin-left': $paddingLeftPos,
+      })
+      $ezMasonry.append($padding);
     }
   });
 
