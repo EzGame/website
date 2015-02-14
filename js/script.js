@@ -8,27 +8,21 @@ $(document).ready(function () {
   /* Quirky animations */
   $('#intro').mouseenter(function() {
     $(this).transition({
-      rotateX:'360deg'
+      rotateX:'+=360deg'
     }, 1000, 'easeInSine');
-  }).mouseleave(function() {
-    $(this).transition({rotateX:'0deg'}, 0);
-  });
+  })
 
   $('#work').mouseenter(function() {
     $(this).transition({
-      rotateY:'360deg'
+      rotateY:'+=360deg'
     }, 1000, 'easeInSine');
-  }).mouseleave(function() {
-    $(this).transition({rotateY:'0deg'}, 0);
-  });
+  })
 
   $('#projects').mouseenter(function() {
     $(this).transition({
-      rotate:'360deg'
+      rotate:'+=360deg'
     }, 1000, 'easeInSine');
-  }).mouseleave(function() {
-    $(this).transition({rotate:'0deg'}, 0);
-  });
+  })
 
 
   /* Menu functions */
@@ -55,7 +49,7 @@ $(document).ready(function () {
   (function loop(){
     $('#dodecahedron').transition({
       rotateY:'+=10deg',
-      rotateX:'+=1deg',
+      rotateX:'+=1deg'
     }, 1000, 'linear', loop);
   })();
 

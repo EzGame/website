@@ -59,10 +59,9 @@ $(document).ready(function() {
         'width': $ezMasonry.css('padding'),
         'height': $rowHeight,
         'margin-top': $paddingTopPos,
-        'margin-left': $paddingLeftPos,
-      })
+        'margin-left': $paddingLeftPos
+      });
       $ezMasonry.append($padding);
     }
   });
-
 });
