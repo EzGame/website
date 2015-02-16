@@ -12,6 +12,8 @@ $(document).ready(function() {
     'padding': '5%'
   });
 
+
+
   // 2nd get environment variables
   $containerHeight = $ezMasonry.height();
   $containerWidth = $ezMasonry.width();

@@ -4,7 +4,7 @@ html, body {
   padding: 0px;
   font-family: 'Open Sans', sans-serif;
   font-weight: 300;
-  min-width: 400px;
+  min-width: 375px;
 }
 
 h1, h2, h3, h4, h5, h6, strong {
@@ -105,40 +105,42 @@ h1, h2, h3, h4, h5, h6, strong {
     #e8e8e8 100%);
 }
 
+#intro-wrapper {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 680px;
+  width: 768px;
+  margin: auto;
+}
 #intro-pic {
-  position: absolute;
-  padding: 50px;
-  height: 100%;
-  top: 0px;
+  display: inline-block;
+  position: relative;
+  vertical-align: top;
+  text-align: center;
+  width: 380px;
+  height: 670px;
+  overflow: hidden;
 }
-
 #intro-pic img {
+  display: block;
   min-height: 100%;
+  margin-left: -60px;
 }
-
 #intro-text {
-  position: absolute;
-  padding: 50px 50px 50px 10px;
-  height: 100%;
-  width: 440px;
-  right: 0px;
+  display: inline-block;
+  text-align: left;
+  vertical-align: top;
+  padding-left: 20px;
+  width: 368px;
+  height: 640px;
   color: #2a2a2a;
   font-size: 20px;
   font-weight: bold;
   line-height: 30px;
-  background: #e8e8e8;
-  background: -webkit-linear-gradient(
-      linear, left top, left bottom,
-      color-stop(0%,#e8e8e8),
-      color-stop(50%,#ffffff),
-      color-stop(100%,#e8e8e8));
-  background: linear-gradient(
-      to bottom,
-      #e8e8e8 0%,
-      #ffffff 50%,
-      #e8e8e8 100%);
 }
-
 #intro-resume {
   float:right;
   font-size:22px;
@@ -228,7 +230,7 @@ h1, h2, h3, h4, h5, h6, strong {
 /* DODECAHEDRON */
 #do-cover {
   position: absolute;
-  right: 90px;
+  right: 77.5px;
   bottom: 50px;
   width: 220px;
   height: 220px;
@@ -335,19 +337,29 @@ h1, h2, h3, h4, h5, h6, strong {
 .desktop { display: block; }
 
 @media (max-width: 768px) {
-  #intro-text {
-    padding: 50px 10px 50px 10px;
-    width: 400px;
+  #intro-wrapper {
+    max-width: 768px;
+    width: auto;
+    text-align: center;
   }
+
+  #intro-pic {
+    display: none;
+  }
+
+  #intro-text {
+    min-width: 375px;
+    max-width: 500px;
+    width: auto;
+    padding: 10px;
+  }
+
   .desktop { display: none; }
   .mobile { display: none; }
   .tablet { display: block; }
 }
 
 @media (max-width: 480px) {
-  #intro-text {
-    padding: 20px 10px;
-  }
   .desktop { display: none; }
   .tablet { display: none; }
   .mobile { display: block; }
