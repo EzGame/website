@@ -80,6 +80,11 @@ h1, h2, h3, h4, h5, h6, strong {
   top: 40%;
   color: white;
   font-size: 60px;
+  /*text-shadow:*/
+    /*0 5px 5px rgba( 0, 0, 0, 0.3 ),*/
+    /*0 -5px 5px rgba( 0, 0, 0, 0.3 ),*/
+    /*5px 0 5px rgba( 0, 0, 0, 0.3 ),*/
+    /*-5px 0 5px rgba( 0, 0, 0, 0.3 );*/
   line-height: 50px;
   font-weight: 500;
   font-family: 'Montserrat', sans-serif;
@@ -111,7 +116,7 @@ h1, h2, h3, h4, h5, h6, strong {
   bottom: 0;
   left: 0;
   right: 0;
-  height: 680px;
+  height: 720px;
   width: 768px;
   margin: auto;
 }
@@ -136,7 +141,7 @@ h1, h2, h3, h4, h5, h6, strong {
   padding-left: 20px;
   width: 368px;
   height: 640px;
-  color: #2a2a2a;
+  color: #4a4a4a;
   font-size: 20px;
   font-weight: bold;
   line-height: 30px;
@@ -163,7 +168,7 @@ h1, h2, h3, h4, h5, h6, strong {
   width: 240px;
 }
 
-#work {
+#story {
   width: 200px;
 }
 
@@ -176,7 +181,7 @@ h1, h2, h3, h4, h5, h6, strong {
   top: 0px;
   left: 70%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.85);
   color: white;
 
   font-size: 2em;
@@ -222,9 +227,13 @@ h1, h2, h3, h4, h5, h6, strong {
 .footer-container {
   display:block;
   width: 100%;
-  height: 500px;
+  height: 100%;
   background: #1a1a1a;
   color: #fff;
+}
+
+#footer {
+
 }
 
 /* DODECAHEDRON */
@@ -350,6 +359,9 @@ h1, h2, h3, h4, h5, h6, strong {
   #intro-text {
     min-width: 375px;
     max-width: 500px;
+    min-height: 580px;
+    max-height: 710px;
+    height: auto;
     width: auto;
     padding: 10px;
   }

@@ -12,8 +12,6 @@ $(document).ready(function() {
     'padding': '5%'
   });
 
-
-
   // 2nd get environment variables
   $containerHeight = $ezMasonry.height();
   $containerWidth = $ezMasonry.width();
@@ -29,7 +27,7 @@ $(document).ready(function() {
     // set img css
     $(elem).find('.project-img').css({
       'height': $rowHeight,
-      'width': 'auto',
+      'width': 'auto'
     });
 
     // set parent css
@@ -48,7 +46,7 @@ $(document).ready(function() {
 
     // set hover css
     $(elem).find('.project-hover').css({
-      'width': $(elem).width(),
+      'width': $(elem).width()
     });
 
     // if this is last time, try and find furthest point and add padding
@@ -57,6 +55,7 @@ $(document).ready(function() {
       $paddingLeftPos = Math.max($rowWidthHolder[0], $rowWidthHolder[1]);
       $paddingTopPos =
           ($paddingLeftPos == $rowWidthHolder[0]) ? 0 : $rowHeight;
+
       $padding.css({
         'width': $ezMasonry.css('padding'),
         'height': $rowHeight,

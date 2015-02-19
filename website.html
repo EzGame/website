@@ -16,7 +16,7 @@
     <div id="page1" class="full-page">
       <div id="header" class="desktop tablet">
         <a class="header-link" href="#content1">ABOUT ME</a>
-        <a class="header-link" href="#content2">WORK</a>
+        <!--<a class="header-link" href="#content2">MY STORY</a>-->
         <a class="header-link" href="#content3">PROJECTS</a>
         <a class="header-link" href="#footer">CONTACT</a>
       </div>
@@ -55,7 +55,7 @@
     </div>
 
 
-    <div id="content1" class="full-page page-gradient">
+    <div id="content1" class="full-page page-gradient" style="height: 800px;">
       <div class="content-container">
         <div id="intro-wrapper">
           <div id="intro-pic">
@@ -66,13 +66,14 @@
             My name is David Zhang.<br/>
             I am a Toronto based web, rails, whatever-is-needed developer.
             I fill my life with technology from sci-fi stories to building webapps.
-            I am particularly passionate about creating powerful applications
-            wrapped with <strong>crisp</strong> designs.<br/><br/>
-            During my spare time, I like to play with my Camera, contemplating the
-            meaning of life, and playing some DotA. I love urban exploration,
-            especially when there is food involved. My dream is to one day capture
-            the essence of life in some sort of physical medium, but that's a long
-            ways off.
+            I am particularly passionate about building complex back-end systems that
+            support <strong>crisp</strong> UX designs.<br/><br/>
+            During my spare time, I like to dabble with different art forms,
+            living a life of imagination, and playing some DotA. I love urban
+            exploration, especially when there is food involved. Overall I pride
+            myself as a hipster and realist, and a little funny.<br/><br>
+            This portfolio is meant as a hub into my life.
+            <br/><strong>As I see it.</strong>
             <br/><br/>
             <div id="intro-resume"
                  onclick="document.location.href = 'resume.pdf';">
@@ -85,34 +86,38 @@
 
 
     <div id="page2" class="section">
-      <div id="work" class="boxed-text no-select">WORK</div>
+      <div id="projects" class="boxed-text no-select">PROJECTS</div>
     </div>
 
 
     <div id="content2" class="full-page page-gradient">
       <div class="content-container">
-        Some stuff about my work at wishabi + IBM
-        paralax scrolling time line
-      </div>
-    </div>
-
-
-    <div id="page3" class="section">
-      <div id="projects" class="boxed-text no-select">PROJECTS</div>
-    </div>
-
-
-    <div id="content3" class="full-page page-gradient">
-      <div class="content-container">
         <div id="ez-masonry">
+          <div class="project">
+            <img class="project-img" src="img/proj_album.jpg">
+            <div class="project-hover">
+              <div class="project-hover-title">
+                Zapbook!
+                <ul class="project-hover-subtitle">
+                  <li>Flat</li>
+                  <li>Parallax</li>
+                  <li>Photography</li>
+                </ul>
+              </div>
+              <div class="project-hover-body">
+                A photo album of my journey through photography
+                <a><i></i></a>
+              </div>
+            </div>
+          </div>
           <div class="project">
             <img class="project-img" src="img/proj_website.png"/>
             <div class="project-hover">
               <div class="project-hover-title">
                 EZDZ.io
                 <ul class="project-hover-subtitle">
-                  <li>HTML5</li>
-                  <li>CSS3</li>
+                  <li>Portfolio</li>
+                  <li>HTML/CSS</li>
                   <li>jQuery</li>
                 </ul>
               </div>
@@ -183,21 +188,9 @@
     </div>
 
 
-    <div class="footer-container">
+    <div class="footer-container full-page">
       <div id="footer" class="content-container">
-        Some text about footers + contact
-
-        TODO:
-        Logo
-        Content - about
-        Content - timeline
-        Content - project showcase
-        <div id="header" class="desktop tablet">
-          <a class="header-link" href="#content1">ABOUT ME</a>
-          <a class="header-link" href="#content2">WORK</a>
-          <a class="header-link" href="#content3">PROJECTS</a>
-          <a class="header-link" href="#footer">CONTACT</a>
-        </div>
+        CONTACT ME
       </div>
     </div>
 

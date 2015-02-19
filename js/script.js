@@ -12,15 +12,9 @@ $(document).ready(function () {
     }, 1000, 'easeInSine');
   })
 
-  $('#work').mouseenter(function() {
-    $(this).transition({
-      rotateY:'+=360deg'
-    }, 1000, 'easeInSine');
-  })
-
   $('#projects').mouseenter(function() {
     $(this).transition({
-      rotate:'+=360deg'
+      rotateY:'+=360deg'
     }, 1000, 'easeInSine');
   })
 
@@ -61,13 +55,13 @@ $(document).ready(function () {
   $footer = $('#footer');
   $(window).scroll(function() {
     $position = $(window).scrollTop();
-    if ($position == 0) {
+    if ($position <= 50) {
       $header.removeClass('animated fadeOut','');
       $header.addClass('animated fadeIn');
     } else if ($position > 0 && !$header.hasClass('fadeOut')) {
       $header.removeClass('animated fadeIn','');
       $header.addClass('animated fadeOut');
-    } else if ($position + window.innerHeight >= $winHeight) {
+    } else if ($position + window.innerHeight >= $winHeight - 50) {
       $footer.removeClass('animated fadeOut','');
       $footer.addClass('animated fadeIn');
     } else if ($position + window.innerHeight < $winHeight && !$footer.hasClass('fadeOut')) {
