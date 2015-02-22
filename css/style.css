@@ -225,9 +225,9 @@ h1, h2, h3, h4, h5, h6, strong {
 }
 
 .footer-container {
-  display:block;
+  display: block;
   width: 100%;
-  height: 100%;
+  height: 600px;
   background: #1a1a1a;
   color: #fff;
 }
@@ -235,6 +235,15 @@ h1, h2, h3, h4, h5, h6, strong {
 #footer {
 
 }
+
+#email {
+
+}
+
+#email input, #email textarea {
+  display: block;
+}
+
 
 /* DODECAHEDRON */
 #do-cover {

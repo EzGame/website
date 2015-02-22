@@ -1,69 +1,43 @@
-var http = require('http'); //http server and client functionality
-var fs = require('fs'); //filesystemrelayed functionality
-var path = require('path'); //fs path related functionality
-var mime = require('mime'); //ability to derive a MIME type based on filename extension
-var cache = {}; //contents of cached files are stored
+/* EZDZ.io */
+var express = require('express');
+var compression = require('compression');
+var nodemailer = require('nodemailer');
+var cacheTime = 86400000; // one day
 
-
-function send404(response) {
-	response.writeHead(404, {'Content-Type': 'text/plain'});
-	response.write('Error 404: resource not found.');
-	response.end();
-}
-
-function sendFile(response, filePath, fileContents){
-	response.writeHead(
-		200,
-		{"content-type":mime.lookup(path.basename(filePath))}
-	);
-	response.end(fileContents);
-}
-
-function serveStatic(response, cache, absPath){
-	//check if file is cached in memory
-	if(cache[absPath]) {
-		//server file from memory
-		sendFile(response, absPath, cache[absPath]);
-	} 
-	else {
-		//check if file exists
-		fs.exists(absPath, function (exists){
-			if (exists){
-				//read file from disk
-				fs.readFile(absPath, function (err, data){
-					if(err){
-						send404(response);
-					}
-					else {
-						//cache
-						cache[absPath] = data;
-						//and serve file from disk
-						sendFile(response, absPath, data);
-					}
-				})
-			} 
-			else {
-				send404(response);
-			}
-		});
-	}
-}
-
-//create httpserver using anon function to define per-request behaviour
-var server = http.createServer(function(request, response){
-	var filePath = false;
-
-	console.log(request.url);
-	if(request.url == '/'){
-		filePath = 'website.html'; //serve this as default
-	} else {
-		filePath =  request.url; //translate url path to relative file path
-	}
-
-	var absPath = './' +filePath;
-	serveStatic(response, cache, absPath); //serve static file
+// Create server using express
+var app = express();
+var smtp = nodemailer.createTransport("SMTP", {
+  service: 'gmail',
+  auth: {
+    user: process.env.EMAILADDR,
+    pass: process.env.EMAILPASS
+  }
 });
 
-server.listen(3000, function(){
-	console.log("Server listening on port 3000.");
+// Compress static assets
+app.use(compression());
+
+// Send static assets with caching
+app.use(express.static(__dirname, {maxAge: cacheTime}));
+
+// GET: Reroute default to index.html
+app.get('/', function(request, response) {
+  response.sendfile('index.html');
+});
+
+// POST: Email route to me!
+app.post('/send', function(request, response) {
+  var mail = {
+    to: 'zyq.david@gmail.com',
+    subject: '[EZDZ.io] ' + request.query.title,
+    text: request.query.subject + '\n\nFROM: ' + request.query.from
+  };
+  smtp.sendMail(mail, function(error, idleResponse) {
+    response.end((error) ? "error" : "sent");
+  });
+});
+
+// Listen on environment port or 3000
+app.listen(process.env.PORT || 3000, function(){
+  console.log("Express Started on port 3000");
 });
