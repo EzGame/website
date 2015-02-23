@@ -1,6 +1,6 @@
 <html>
   <head>
-    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/animate.min.css" type="text/css">
     <link rel="stylesheet" href="css/style.css" type="text/css">
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
@@ -18,9 +18,9 @@
         <a class="header-link" href="#content3">PROJECTS</a>
         <a class="header-link" href="#footer">CONTACT</a>
       </div>
-      <div id="header-mobile" class="mobile">
-        <i class="fa fa-bars"></i>
-      </div>
+      <!--<div id="header-mobile" class="mobile">-->
+        <!--<i class="fa fa-bars"></i>-->
+      <!--</div>-->
       <div id="do-cover">
         <div id="dodecahedron" class="no-select">
           <div class="face face1 no-select">
@@ -186,20 +186,52 @@
     </div>
 
     <div id="page3" class="section">
-      <div id="footer">
-        SOCIAL STUFF
-      </div>
-      <div id="email">
-        <div id="email-wrapper">
-          <input id="title" type="text" name="title"
-                 placeholder="What's up?"/>
-          <textarea id="body" cols="64" rows="8"
-                    placeholder="Tell me more!"></textarea>
-          <input id="from" type="text" name="from"
-                 placeholder="How do I get back to you?"/>
-          <button id="send"><i class="fa fa-send"></button>
+      <div class="content-container">
+        <div id="footer">
+          <div class="i-container">
+            <a href="https://github.com/EzGame">
+              <i class="fa fa-github left"></i>
+            </a>
+          </div>
+          <div class="i-container">
+            <a href="https://www.linkedin.com/in/dzhang91">
+              <i class="fa fa-linkedin right"></i>
+            </a>
+          </div>
+          <div class="i-container">
+            <a href="https://www.facebook.com/david.zhang.98">
+              <i class="fa fa-facebook-official left"></i>
+            </a>
+          </div>
+          <div class="i-container">
+            <a href="https://twitter.com/ezdzdev">
+              <i class="fa fa-twitter right"></i>
+            </a>
+          </div>
+          <div class="i-container">
+            <a href="https://ezdzblog.wordpress.com/">
+              <i class="fa fa-wordpress left"></i>
+            </a>
+          </div>
+          <div class="i-container">
+            <a href="https://instagram.com/instantn00dles/">
+              <i class="fa fa-instagram right"></i>
+            </a>
+          </div>
         </div>
-        <div id="email-result" style="display:none"></div>
+        <div id="email">
+          <div id="email-wrapper">
+            <label>Lets chat...</label>
+            <input id="title" type="text" name="title"
+                   placeholder="What's up?"/>
+            <textarea id="body" cols="64" rows="8"
+                      placeholder="Tell me more!"></textarea>
+            <input id="from" type="text" name="from"
+                   placeholder="How do I get back to you?"/>
+            <button id="send"><i class="fa fa-paper-plane"></i></button>
+          </div>
+          <div id="email-result" style="display:none"></div>
+        </div>
       </div>
     </div>
 
