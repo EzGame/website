@@ -1,8 +1,8 @@
 $(document).ready(function () {
   /* Backstretch */
   $('#page1').backstretch('img/mac.jpg');
-  $('#page2').backstretch('img/mac2.jpg');
-  $('#page3').backstretch('img/cafe.jpg');
+  $('#page2').backstretch('img/cafe.jpg');
+  $('#page3').backstretch('img/mac2.jpg');
 
   /* Quirky animations */
   $('#intro').mouseenter(function() {
@@ -23,12 +23,12 @@ $(document).ready(function () {
   });
 
   /* Dodecahedron */
-  $dodechaedron = $('#dodecahredron');
+  $dodecahedron = $('#dodecahedron');
   $('#do-cover').mousedown(function() {
     console.log("HI");
   }).mousedown(function() {
     console.log("HELLO");
-    $dodechaedron.transition({
+    $dodecahedron.transition({
       rotateY:'0deg',
       rotateX:'0deg'
     }, 1000, 'linear');
@@ -39,7 +39,7 @@ $(document).ready(function () {
   });
 
   (function loop(){
-    $dodechaedron.transition({
+    $dodecahedron.transition({
       rotateY:'+=10deg',
       rotateX:'+=1deg'
     }, 1000, 'linear', loop);

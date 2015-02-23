@@ -2,9 +2,10 @@
 var express = require('express');
 var compression = require('compression');
 var nodemailer = require('nodemailer');
-var cacheTime = 86400000; // one day
+var sassMiddleware = require('node-sass-middleware');
 
 // Create server using express
+var cacheTime = 86400000; // one day
 var app = express();
 var smtp = nodemailer.createTransport("SMTP", {
   service: 'gmail',
@@ -17,9 +18,18 @@ var smtp = nodemailer.createTransport("SMTP", {
 // Compress static assets
 app.use(compression());
 
+// Sass compile main style.css
+app.use('/css',
+  sassMiddleware({
+    src: __dirname + '/sass',
+    dest: __dirname + '/css',
+    debug: true,
+    outputStyle: 'compressed'
+  })
+);
+
 // Send static assets with caching
 app.use(express.static(__dirname, {maxAge: cacheTime}));
-
 // GET: Reroute default to index.html
 app.get('/', function(request, response) {
   response.sendfile('index.html');
