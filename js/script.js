@@ -70,21 +70,63 @@ $(document).ready(function () {
 
   /* Mailer */
   $('#send').click(function() {
-    var title = $('#title').val();
-    var body = $('#body').val();
-    var from = $('#from').val();
-    // TODO: error handling
-    console.log("sending");
+    var title = $('#title');
+    var body = $('#body');
+    var from = $('#from');
+    var message = $('#message');
+    var error = 0;
+    if (title.val() == "") {
+      title.addClass("missing");
+      error = 1;
+    } else {
+      title.removeClass("missing");
+      error = 0;
+    }
+    if (body.val() == "") {
+      body.addClass("missing");
+      error = 1;
+    } else {
+      body.removeClass("missing");
+      error = 0;
+    }
+
+    if (error) {
+      message.text("I'm missing some information.");
+      message.addClass('bounce');
+      message.one('webkitAnimationEnd ' +
+          'mozAnimationEnd ' +
+          'MSAnimationEnd ' +
+          'oanimationend ' +
+          'animationend', function() {
+        message.removeClass('bounce');
+      });
+      return;
+    }
+
     $.post('/send', {
-      title: title,
-      body: body,
-      from: from
+      title: title.val(),
+      body: body.val(),
+      from: from.val()
     }, function(data) {
-      // TODO: Hide mailer if it worked
-      if (data == 'sent')
-        console.log('complete');
-      else
-        console.log('error');
+      if (data == 'sent' || 1) {
+        if (from.val() == "") {
+          message.text("Thank you for the message :)");
+        } else {
+          message.text("Thank you, I'll get back to you ASAP");
+        }
+        message.addClass('fadeIn');
+        $('#email-wrapper').hide();
+      } else {
+        message.text("Oops, something went wrong :(");
+        message.addClass('shake');
+        message.one('webkitAnimationEnd ' +
+            'mozAnimationEnd ' +
+            'MSAnimationEnd ' +
+            'oanimationend ' +
+            'animationend', function() {
+          message.removeClass('shake');
+        });
+      }
     });
   });
 });

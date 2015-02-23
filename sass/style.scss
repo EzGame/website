@@ -240,6 +240,12 @@ strong {
     font-family: 'Open Sans', sans-serif;
     font-weight: lighter;
     line-height: 1em;
+
+    a {
+      color: white;
+      &:hover { text-decoration: none; }
+      &:visited { color: white; }
+    }
   }
 }
 
@@ -295,13 +301,18 @@ strong {
       top: 70px;
       bottom: 70px;
       margin: auto;
-      left: 0;
+      left: 20px;
       height: 310px;
       position: absolute;
 
-      label {
+      #message {
         font-size: 20px;
         font-weight: bold;
+        -webkit-animation-duration: 1s;
+        -moz-animation-duration: 1s;
+        -ms-animation-duration: 1s;
+        -o-animation-duration: 1s;
+        animation-duration: 1s;
       }
 
       input, textarea {
@@ -319,6 +330,10 @@ strong {
           border-bottom: 4px solid #5ea4e7;
           outline: none;
         }
+      }
+
+      .missing {
+        border: 2px solid #e7392e !important;
       }
 
       input {
