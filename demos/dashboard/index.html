@@ -1,0 +1,85 @@
+<html>
+<head>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js">
+  </script>
+  <script type="text/javascript" src="datepicker/js/datepicker.js"></script>
+  <script src="//d3js.org/d3.v3.min.js" charset="utf-8"></script>
+  <script src="http://d3js.org/topojson.v1.min.js"></script>
+  <script src="d3/FillGauge.js"></script>
+  <script src="d3/Histogram.js"></script>
+  <script src="d3/Sessions.js"></script>
+  <script src="script.js"></script>
+  <script src="d3wrapper.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBRyGVYuytkE35LlncbDdCXmYTy9dKJ300&libraries=visualization"></script>
+  <script src="map.js"></script>
+
+  <link rel="stylesheet" href="datepicker/css/datepicker.css"/>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="animate.css">
+  <link href='//fonts.googleapis.com/css?family=Lato:100,300,400,700'
+          rel='stylesheet' type='text/css'>
+</head>
+<body>
+  <!-- Header Content -->
+  <div class="intro">
+    <div id="intro" class="hidden">FAnalytics</div>
+    <img src="//flyers.merchants.wishabi.ca/images/logo_white.png"
+             class="flipp">
+  </div>
+  <div id="header">
+    <div class="header-container">
+      <div class="header-logo">
+        <img src="//flyers.merchants.wishabi.ca/images/logo_white.png"
+             class="flipp">
+        <img src="//corp.flipp.com/images/flipp_corp/teams_analytics-ico.png"
+             class="analytics">
+      </div>
+      <div class="header-controls">
+        <div id="flyerrunpicker">
+          <input class="flyer-run" type="number" value="49157"
+                 placeholder="Flyer Run ID(Optional)"/>
+        </div>
+        <div id="merchantpicker">
+          <select class="merchant">
+            <option value="236">Home Depot</option>
+            <option value="2175">Walmart</option>
+            <option value="2217">Big Lots</option>
+            <option value="2038">Menards</option>
+          </select>
+        </div>
+        <div id="datepicker">
+          <div id="datedisplay">
+            28 July, 2008 - 31 July, 2008
+          </div>
+          <div id="datecalender" class="animated hidden fadeInRight">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <div id="main">
+    <div class="main-container">
+      <div id="sidebar">
+        <div class="sidebar-container">
+          <!-- <div class="sidebar-section" data-value="2">
+            <img src="imgs/FillGauge.png"/>
+            <div class="section-title">Manish</div>
+          </div> -->
+          <div class="sidebar-section" data-value="1">
+            <img src="imgs/Histogram.png"/>
+            <div class="section-title">Adam</div>
+          </div>
+          <div class="sidebar-section" data-value="3">
+            <img src="imgs/maps.png"/>
+            <div class="section-title">Josh</div>
+          </div>
+        </div>
+      </div>
+      <div id="dashboard">
+      </div>
+    </div>
+  </div>
+</body>
+</html>

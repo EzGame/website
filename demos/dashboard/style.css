@@ -1,0 +1,397 @@
+/* General shit */
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Lato', sans-serif !important;
+}
+
+.hidden {
+  display: none;
+}
+
+.active {
+  background: white !important;
+}
+
+.error {
+  border: 2px solid red;
+}
+
+.col2 {
+  width: 50%;
+  box-sizing: border-box;
+}
+
+
+/* fillgauges css */
+.fillgauges .left {
+  float: left;
+}
+
+.fillgauges .right {
+  float: right;
+}
+
+.fillgauges .title-container {
+  width: 100%;
+  height: 70px;
+  padding-bottom: 10px;
+}
+
+.fillgauges .flyers {
+  height: 70px;
+  background: url(//f.wishabi.net/arbitrary_files/10528/1399645569/10528_flyertown-logo-light.png);
+  background-size: 200px 39px;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+}
+
+.fillgauges .flipp {
+  height: 70px;
+  background: url(https://corp.flipp.com/images/flipp_corp/flipp-large.png);
+  background-size: 102px 70px;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+}
+
+/* Sessions css */
+.sessions svg {
+  font: 10px sans-serif;
+}
+
+.sessions .area {
+  fill: #00c6d8;
+  clip-path: url(#clip);
+}
+
+.sessions .axis path,
+.sessions .axis line {
+  fill: none;
+  stroke: #fff;
+  shape-rendering: crispEdges;
+}
+
+.sessions .axis text {
+  fill: white;
+}
+
+.sessions .brush .extent {
+  stroke: #fff;
+  fill-opacity: .125;
+  shape-rendering: crispEdges;
+}
+
+.sessions .x.axis path {
+  display: none;
+}
+
+.sessions .line {
+  fill: none;
+  stroke: steelblue;
+  stroke-width: 1.5px;
+}
+
+.sessions text {
+  stroke: #fff;
+}
+
+/* map */
+#google-sidenav {
+  position: relative;
+  width: 200px;
+  height: 100%;
+  float: left;
+  padding: 10px;
+  box-sizing: border-box;
+  background: #449db1;
+}
+#google-sidenav .store-selector {
+  width: 180px;
+  height: 45px;
+  margin-top: 10px;
+  padding-left: 10px;
+}
+#google-sidenav .toggle {
+  margin-top: 20px;
+  display: inline-block;
+  width: 90px;
+  height: 30px;
+  vertical-align: top;
+  color: #333333;
+  text-align: center;
+  line-height: 30px;
+  font-weight: 300;
+  cursor: pointer;
+  font-size: 14px;
+  background: #c7c7c7;
+  transition: 0.5s;
+}
+#google-sidenav .surprise {
+  margin-top: 20px;
+  width: 180px;
+  height: 30px;
+  color: #333333;
+  text-align: center;
+  line-height: 30px;
+  font-weight: 300;
+  cursor: pointer;
+  font-size: 14px;
+  background: white;
+}
+#google-map {
+  position: relative;
+  height: 100%;
+  float: none;
+  overflow: hidden;
+}
+
+/* histogram */
+.bar rect {
+  fill: steelblue;
+  shape-rendering: crispEdges;
+}
+
+.bar text {
+  fill: #fff;
+}
+
+.axis path, .axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+
+
+/* Form stuff */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input, select {
+  width: 150px;
+  height: 50px;
+  margin-top: 10px;
+  padding-left: 50px;
+  color: #f7f7f7;
+  background: none;
+  border: 0;
+  border-bottom: 4px solid #00c6d8;
+  vertical-align: middle;
+  line-height: 40px;
+  font-size: 16px;
+  font-weight: 300;
+  font-family: 'Lato', sans-serif !important;
+  -webkit-appearance: none;
+  -webkit-border-radius: 0px;
+}
+select {
+  padding-left: 32px;
+  cursor: pointer;
+}
+select:focus, input:focus {
+  outline: none;
+}
+
+/* Real shit */
+#header {
+  height: 70px;
+  width: 100%;
+  z-index: 300;
+  top: 0px;
+  background: #11829c;
+  border-bottom: 1px solid #449db1;
+} .header-container {
+    margin: 0 10px;
+    overflow: hidden;
+  } .header-logo {
+      left: 10px;
+      position: relative;
+      width: 200px;
+      height: 70px;
+    } .header-logo .analytics {
+        position: absolute;
+        top: 15px;
+        left: 70px;
+        max-height: 40px;
+        z-index: 2;
+      }
+      .header-logo .flipp {
+        position: absolute;
+        top: 10px;
+        max-height: 50px;
+        z-index: 3;
+      }
+    .header-controls {
+      position: absolute;
+      height: 45px;
+      right: 40px;
+      top: 0px;
+    } #flyerrunpicker {
+        float:left;
+        position: relative;
+        padding: 10px 10px 0 10px;
+        height: 50px;
+      }
+      #merchantpicker {
+        float: left;
+        position: relative;
+        padding: 10px 10px 0 10px;
+        height: 50px;
+      }
+      #datepicker {
+        float: left;
+        position: relative;
+        padding: 10px 10px 0 10px;
+        height: 60px;
+      } #datedisplay {
+          width: 300px;
+          background: none;
+          border: 0;
+          border-bottom: 4px solid #00c6d8;
+          text-align: center;
+          font-size: 16px;
+          font-weight: 300;
+          color: #f7f7f7;
+          margin-top: 10px;
+          height: 46px;
+          line-height: 50px;
+          cursor: pointer;
+        }
+        #datecalender {
+          position: absolute;
+          z-index: 100;
+          right: 5px;
+          width: 376px;
+          height: 133px;
+          padding: 10px;
+          border-top: 2px solid #f7f7f7;
+          -webkit-animation-duration: 0.2s;
+          background: #333333;
+        } #datecalender .datepicker {
+            position: absolute;
+            bottom: 0;
+            top: auto;
+          } #datecalender .datepicker span {
+              font-size: 12px;
+              font-weight: 100;
+            }
+            #datecalender .datepicker a{
+              cursor: pointer;
+            }
+            #datecalender .datepicker a:hover {
+              color: #b6f063;
+            }
+
+#main {
+  width: 100%;
+  background: #f7f7f7;
+} .main-container {
+    position: relative;
+    overflow: hidden
+  } #sidebar {
+      position: relative;
+      width: 200px;
+      height: inherit;
+      float: left;
+      border-top: 2px solid #f7f7f7;
+      background: #e7e7e7;
+    } .sidebar-container {
+        padding: 10px;
+      } .sidebar-section {
+          margin-top: 10px;
+          position: relative;
+          width: 180px;
+          height: 100px;
+          overflow: hidden;
+          cursor: pointer;
+        } .sidebar-section img {
+            text-align: center;
+            left: -10px;
+            max-height: 100px;
+            position: relative;
+          }
+          .sidebar-section .section-title {
+            position: absolute;
+            bottom: 0;
+            width: 180px;
+            height: 30px;
+            line-height: 30px;
+            font-weight: 300;
+            color: white;
+            text-align: center;
+            background-color: rgba(55,55,55,0.8);
+          }
+
+    #dashboard {
+      overflow: auto;
+      height: inherit;
+      position: relative;
+    } .module-container {
+        margin: 20px;
+        padding: 20px;
+        min-height: 770px;
+        background: #555555;
+        position: relative;
+      } .module-settings {
+          height: 100%;
+        }
+        .module-container img {
+          width: 50px;
+          height: 50px;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          margin-left: -25px;
+          margin-top: -25px;
+        }
+        .module-submit {
+          width: 100px;
+          height: 30px;
+          margin-top: 20px;
+          background: #e7e7e7;
+          text-align: center;
+          line-height: 30px;
+          color: #333333;
+          cursor: pointer;
+        }
+
+/* LOL */
+.intro {
+  position: absolute;
+  z-index: 1000;
+  background: #333333;
+  height: 100%;
+  width: 100%;
+  top: 0px;
+  -webkit-animation-duration: 3s;
+}
+
+.intro img {
+  position: absolute;
+  bottom: 50px;
+  right: 50px;
+  max-width: 100px;
+  max-height: 100px;
+}
+
+#intro {
+  width: 500px;
+  margin: 0 auto;
+  height: 100%;
+  line-height: 500px;
+  text-align: center;
+  color: white;
+  font-weight: 300;
+  font-size: 72px;
+  cursor: pointer;
+  transition: 3s;
+  -webkit-animation-duration: 3s;
+}
+
+#intro:hover {
+  color: #00c6d8;
+}
+
+
